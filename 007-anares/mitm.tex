@@ -1,0 +1,94 @@
+\documentclass[aspectratio=1610, handout]{beamer}%, handout
+    \usepackage{tikz}
+    \usepackage{svg}
+    \input{header}
+    \definecolor{backgroundColor}{HTML}{2D2D2D}
+    \usetikzlibrary{arrows}
+    \usetikzlibrary{backgrounds}
+    %\begin{frame}
+    \begin{document}
+    \begin{tikzpicture}[scale=0.45, every node/.style={scale=0.6},color=white,]
+        \tikzstyle{myarrows}=[thick, line width=1.7mm,-open triangle 90,
+        postaction={draw, line width=6.5mm, shorten >=4mm, -},
+        postaction={draw, backgroundColor, shorten >= 1.3mm, -triangle 90, line width=1mm},
+        postaction={draw, line width=5mm, backgroundColor, shorten >= 4mm, -}]
+        
+    \node at (0,0) {
+    \includegraphics[height=3cm]{img/smartphone.pdf}
+    };
+    \node at (0,-2.5) {
+        \LARGE{Client}
+    };
+
+    \onslide<1-1|handout:1>{
+        \node[xscale=-1] at (2.5,2) {
+            \includegraphics[width=1.5cm]{img/key_green.pdf}
+        };
+        \node at (20,-2) {
+            \includegraphics[width=1.5cm]{img/key_green.pdf}
+        };
+    }
+    \node at (24,0) {
+        \includegraphics[height=3cm]{img/server.pdf}
+    };
+    \node at (24,-2.5) {
+        \LARGE{Serveur}
+    };
+    \onslide<2-3|handout:2>{
+    \node[xscale=-1] at (2.5,2) {
+        \includegraphics[width=1.5cm]{img/key_purple.pdf}
+    };
+    \node[xscale=1] at (8.5,-2) {
+        \includegraphics[width=1.5cm]{img/key_purple.pdf}
+    };
+    \node[xscale=-1] at (15.5,2) {
+        \includegraphics[width=1.5cm]{img/key_orange.pdf}
+    };
+    \node at (20,-2) {
+        \includegraphics[width=1.5cm]{img/key_orange.pdf}
+    };
+    %\onslide<2-2>{
+    \node at (12,0) {
+        \includegraphics[height=3cm]{img/computer.pdf}
+    };
+    \node at (12,-2.5) {
+        \LARGE{MITM}
+    };
+    }
+    \node[inner sep=0,minimum size=0] at (1.5,1) (C1) {}; % invisible node
+    \node[inner sep=0,minimum size=0] at (21,1) (S1) {}; % invisible node
+
+    \node[inner sep=0,minimum size=0] at (1.5,-1) (C2) {}; % invisible node
+    \node[inner sep=0,minimum size=0] at (21,-1) (S2) {}; % invisible node
+
+    
+    \node[inner sep=0,minimum size=0] at (9.5,1) (ML1) {}; % invisible node
+    \node[inner sep=0,minimum size=0] at (9.5,-1) (ML2) {}; % invisible node
+    \node[inner sep=0,minimum size=0] at (14.5,1) (MR1) {}; % invisible node
+    \node[inner sep=0,minimum size=0] at (14.5,-1) (MR2) {}; % invisible node
+
+    \node[inner sep=0,minimum size=0] at (12,-3) (MB) {}; % invisible node
+    \node[inner sep=0,minimum size=0] at (12,-10) (WT) {}; % invisible node
+
+    \onslide<1-1|handout:1>{
+        \draw [-triangle 60, line width=3pt, green] (C1) -- (S1);
+        \draw [-triangle 60, line width=3pt, green] (S2) -- (C2);
+    }
+    \onslide<2-3|handout:2>{
+        \draw [-triangle 60, line width=3pt, orange] (S2) -- (MR2);
+        \draw [-triangle 60, line width=3pt, orange] (MR1) -- (S1);
+
+        \draw [-triangle 60, line width=3pt, purple] (C1) -- (ML1);
+        \draw [-triangle 60, line width=3pt, purple] (ML2) -- (C2);
+    }
+
+    \onslide<3-3|handout:2>{
+        \draw [-triangle 60, line width=3pt, normalBlockColor] (MB) -- (WT);
+
+        \node at (12,-12) {
+            \includegraphics[height=3cm]{img/wireshark.pdf}
+        };
+    }
+    \end{tikzpicture}
+\end{document}
+%\end{frame}

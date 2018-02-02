@@ -1,0 +1,101 @@
+\documentclass[aspectratio=1610]{beamer}%, handout
+  \input{header.tex}
+  \setbeameroption{show notes on second screen=top}
+  \begin{document}
+
+  \section{Légalité et rétroingénierie}
+  \begin{frame}[t]
+    \slidetitle[]%{Légalité et rétroingénierie}
+    \note{\ExecuteMetaData[002-legal_notes.tex]{propIntelect}}
+    \note{\onslide+<4->{\ExecuteMetaData[002-legal_notes.tex]{loi}}}
+    \note{\onslide+<10->{\ExecuteMetaData[002-legal_notes.tex]{Resume}}}
+%    \note{\onslide+<4->{\ExecuteMetaData[002-legal_notes.tex]{interropérabilité}}}
+    \begin{columns}
+      \begin{column}{0.7\linewidth}
+        \begin{block}{Logiciels et propriété intellectuelle}<2->
+          \begin{itemize}
+          \item<3-> Logiciel protégeable
+          \item<4-> Fonctionnalité en tant que telle non protégeable
+          \end{itemize}
+        \end{block}
+        \begin{block}{Article 122-6-1 du code de la propriété intellectuelle}<5->
+          \begin{itemize}
+          \item<6-> Acquisition légale du logiciel
+          \item<7-> Soit:
+          \begin{itemize}
+          \item<8-> La license ne l'interdit pas
+          \item<9-> Réalisation à des fins d'interropérabilité
+          \end{itemize} 
+          \end{itemize}
+        \end{block}
+      \end{column}
+      \begin{column}{0.25\linewidth}
+        \includegraphics[width=0.95\linewidth]{img/justice.png}
+      \end{column}
+    \end{columns}
+      \onslide+<10->{\begin{center}
+        « On n'a donc pas le droit en France de démontrer techniquement qu'un logiciel présente des failles
+  de sécurité, ou que la publicité pour ces logiciels est mensongère. Dormez tranquilles, citoyens, tous
+  vos logiciels sont parfaits. » 
+      \end{center}
+      \vspace{-1.5\baselineskip}
+      \hspace{0.66\linewidth}Guillermito
+      }
+    \end{frame}
+
+
+    \begin{frame}
+    \slidetitle[Les Bug BugBounty]
+    \note{\ExecuteMetaData[002-legal_notes.tex]{BugBounty}}
+    \note{\onslide<4->{\ExecuteMetaData[002-legal_notes.tex]{img/Tweet}}}
+    \pause
+    \begin{block}{Qu'est ce qu'un Bug Bounty?}
+      \centering
+      \onslide<3->{Un bug bounty est un programme proposé par de nombreux sites web et développeurs de logiciel
+       qui permet à des personnes de recevoir reconnaissance et compensation après avoir reporté
+        des bugs, surtout ceux concernant des exploits et des vulnérabilités}
+    \end{block}
+    \vfill
+    \centering
+    \onslide<4->{
+      \begin{figure}
+        \includegraphics[width=0.5\linewidth]{tweet.png}
+        \caption{Tweet montrant une faille dans macOS}
+      \end{figure}}
+      \end{frame}
+  \end{document}
+
+  Tout d’abord, il faut savoir que si la licence ne dit pas le contraire,
+  il n’est pas illicite de s’adonner au reverse au engineering d’un logiciel.
+  Si le concepteur d’un logiciel veut s’y opposer, il faut que cela soit
+  spécifié dans le fameux contrat que l’on doit normalement lire avant de
+  cliquer sur « J’accepte les termes et conditions d’utilisation ».
+  Si cela n’est pas mentionné, rien ne s’y oppose.
+
+  Il convient de souligner que si le logiciel peut être protégé par une licence,
+  sa fonctionnalité en tant que telle n’est pas protégeable.
+  Par exemple, le programme Word inclus dans la suite bureautique
+  Office de Windows fait l’objet d’une protection juridique spécifique.
+  Mais la fonctionnalité de Word, à savoir être un logiciel de
+  traitement de texte, n’est pas protégeable par Microsoft.
+
+  Mais si le soft est interopérable et aisément disponible,
+  un utilisateur n’aura pas le droit de le décompiler même pour effectuer
+  des maintenances correctives ou évolutives.
+
+  Donc, à partir du moment où l’on se met à trifouiller dans le code source
+  d’un logiciel propriétaire pour en comprendre son fonctionnement,
+  sans pour autant chercher à le faire tourner sur une autre plateforme
+  que celle pour laquelle il a été initialement conçu, est illicite et le
+  fait de publier sur Internet les résultats d’une telle expérimentation,
+  accessible à un public Français, aggrave les faits.
+  « On n'a donc pas le droit en France de démontrer techniquement qu'un logiciel présente des failles
+de sécurité, ou que la publicité pour ces logiciels est mensongère. Dormez tranquilles, citoyens, tous
+vos logiciels sont parfaits. » Guillermito
+
+En droit français, la simple recherche de failles de sécurité n’est pas réprimée en tant que telle, sous
+réserve de respect du régime juridique relatif au respect du droit de la propriété intellectuelle.
+C’est la publication des résultats, la « démonstration technique » de ces recherches qui peut être
+sanctionnée par l’article 323-3-1 du Code pénal.
+
+BugBounty

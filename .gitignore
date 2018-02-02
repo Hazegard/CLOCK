@@ -1,5 +1,7 @@
 build/*
+*/build/*
 svg-inkscape/
 *.pdf
 !build/*.pdf
+!*/build/*.pdf
 !src/*.pdf

@@ -1,0 +1,154 @@
+\documentclass[aspectratio=1610, ]{beamer}%, handout
+\input{header.tex}
+\setbeameroption{show notes on second screen=top}
+\begin{document}
+\section{Élévation de privilèges}
+  \begin{frame}
+    \slidetitle[]
+    \noindent
+    \begin{columns}
+      \begin{column}{0.7\linewidth}
+        \note{\ExecuteMetaData[004-elepriv_notes.tex]{Elepriv}}
+        \begin{block}{Qu'est ce qu'une élévation de privilège?}<2->
+          \onslide<3->{
+          Obtension de permissions accordées à un utilisateur supérieures aux permissions qu'il possède
+          }
+        \end{block}
+        \begin{block}{Intérêt:}<4->
+          \begin{itemize}
+            \item<5-> Android est un système qui restreint l'utilisateur
+            \item<6-> Accéder aux fonctionnalités bloquées
+            \item<7-> Modifier en profondeur le fonctionnement des applications
+          \end{itemize}
+        \end{block}
+      \end{column}
+      \begin{column}{0.25\linewidth}
+        \includegraphics[width=1\linewidth]{img/android_root.png}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+  \begin{frame}[t]
+    \slidetitle[Root]
+    \note{\ExecuteMetaData[004-elepriv_notes.tex]{Root}}
+    \note{\ExecuteMetaData[004-elepriv_notes.tex]{RootPrincipe}}
+    \note{\ExecuteMetaData[004-elepriv_notes.tex]{RootExemples}}
+    \begin{block}{Qu'est ce que le root?}<2->
+      \onslide<3->{
+      Obtention de permissions avancées pour l'utilisateur (``droits super- utilisateurs''), permettant de contourner les limitations constructeurs
+      }
+    \end{block}
+    \begin{columns} 
+      \begin{column}{0.7\linewidth}
+        \begin{overlayarea}{\linewidth}{0.5\textheight}
+        \only<3-8|handout:1>{
+        \begin{block}{Principe du root: \mono{/system}}<4->
+          \begin{enumerate}
+          \item<5-> Utilisation d'une vulnérabilité par un processus pour changer son uid à 0
+          \item<6-> Remontage de la partition \mono{/system} en écriture
+          \item<7-> Copie des binaires su, busybox
+          \item<8-> Remontage de \mono{/system} en lecture seule
+          \end{enumerate}
+        \end{block}
+        }
+        \only<9-|handout:2>{
+          \begin{block}{Exemples d'utilisation}
+            \begin{itemize}
+            \item<10-> Accéder aux partitions systèmes
+            \item<11-> Ajouter un binaire BusyBox
+            \item<12-> Sauvegarder l'état actuel d'une application
+            \item<13-> Modifier les propriétés systèmes
+            \end{itemize}
+          \end{block}
+        }
+        \end{overlayarea}
+      \end{column}
+      \begin{column}{0.25\linewidth}
+        \centering
+        \includegraphics[width=\linewidth]{img/superSU.png}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+
+  \begin{frame}[t]
+    \slidetitle[Xposed]
+    \note{\ExecuteMetaData[004-elepriv_notes.tex]{Xposed}}
+    \note{\ExecuteMetaData[004-elepriv_notes.tex]{XposedUtilisation}}
+    \begin{block}{Qu'est ce que le module Xposed?}<2->
+      \onslide<3->{
+      Framework permettant d'intercepter toutes méthodes d'une application, pour injecter du code suplémentaire
+      }
+    \end{block}
+    \begin{columns} 
+      \begin{column}{0.7\linewidth}
+        \begin{block}{Exemple d'utilisation}<4->
+          \begin{itemize}
+          \item<5-> Lire les preferences 
+          \item<6-> Désactiver la vérification des certificats SSL
+          \item<7-> Modifier son IMEI
+          \item<8-> Modifier sa position GPS
+          \end{itemize}
+        \end{block}
+      \end{column}
+      \begin{column}{0.25\linewidth}
+        \centering
+        \includegraphics[width=0.9\linewidth]{img/xposed.png}
+      \end{column}
+    \end{columns}
+  \end{frame}
+
+
+  \begin{frame}[t]
+    \slidetitle[Xposed]
+    \pause
+    \note{\ExecuteMetaData[004-elepriv_notes.tex]{BootAndroid}}
+    \note{\onslide<7->{\ExecuteMetaData[004-elepriv_notes.tex]{Zygote}}}
+    \note{\onslide<12->{\ExecuteMetaData[004-elepriv_notes.tex]{XposedFonctionnement}}}
+    \begin{columns} 
+      \begin{column}{0.4\linewidth}
+        \vspace{-1.25cm}
+        \centering
+        \begin{figure}
+          \input{init_android}
+          \vspace{-0.75cm}
+          \caption{Initialisation d'Android}
+        \end{figure}
+      \end{column}
+    
+      \begin{column}{0.55\linewidth}
+      \vspace{-1cm}%
+        \centering
+        \only<3-11|handout:1>{
+          \begin{block}{Démarrage d'Android}<3-11>
+            \begin{enumerate}
+            \item <4-> Le kernel lance le processus init
+            \item <5-> Init lance des demons, runtime
+            % usb, adb, ril...
+            \item <6-> Init lance Zygote
+            \end{enumerate}
+        \end{block}
+
+        \begin{block}{Le processus Zygote:}<7-11>
+          \begin{enumerate}
+          \item <8-> Initialise une instance de la VM
+          \item <9-> Pré-charge des classes
+          \item <10-> Fork pour chaque application
+          % usb, adb, ril...
+          \item <11-> Partage une partie de sa mémoire avec ses fils
+          \end{enumerate}
+      \end{block}
+        }
+        \only<12-|handout:2>{
+          \begin{block}{Fonctionnement}
+            \begin{enumerate}
+              \item <13-> Modification du processus init pour ajouter des librairies au classpath
+              \item <14-> Ajout de librairies à Zygote pour détecter le lancement d'applications
+              \item <15-> A chaque nouvelle aplication forké de Zygote, il est possible de modifier le code exécuté lar la VM
+              \end{enumerate}
+        \end{block}
+        }
+      \end{column}
+    \end{columns}
+  \end{frame}
+\end{document}

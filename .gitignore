@@ -1,3 +1,4 @@
-build/
+build/*
 svg-inkscake/
 *.pdf
+!build/*.pdf

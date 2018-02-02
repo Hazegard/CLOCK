@@ -1,4 +1,5 @@
 build/*
-svg-inkscake/
+svg-inkscape/
 *.pdf
 !build/*.pdf
+!src/*.pdf

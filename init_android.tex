@@ -1,5 +1,6 @@
-\documentclass{article}%, handout
+\documentclass[aspectratio=1610, handout]{beamer}%, handout
 \usepackage{tikz}
+\input{header}
 \definecolor{backgroundColor}{HTML}{2D2D2D}
 \usetikzlibrary{arrows}
 \usetikzlibrary{backgrounds}
@@ -31,7 +32,7 @@ Init
 
 \node[inner sep=0,minimum size=0] at (1.5,-3.5) (Z0) {}; % invisible node
 \node[inner sep=0,minimum size=0] at (1.5,-8.5) (Z1) {}; % invisible node
-\onslide<1-5|handout:0>{\draw [ultra thick, rounded corners=5] (0,-7) rectangle node{
+\onslide<1-5|handout:1>{\draw [ultra thick, rounded corners=5] (0,-7) rectangle node{
 Zygote
 } (3,-8.5);}
 
@@ -69,7 +70,7 @@ Applications
 {\LARGE \textbullet\textbullet\textbullet}
 } (3,-13.5);
 
-\onslide<6-|handout:1>{\draw [ultra thick, rounded corners=5, red] (0,-7) rectangle node{
+\onslide<6-|handout:2>{\draw [ultra thick, rounded corners=5, red] (0,-7) rectangle node{
 Zygote
 } (3,-8.5);}
 \end{tikzpicture}

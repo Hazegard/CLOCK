@@ -1,9 +1,11 @@
-\documentclass{article}%, handout
+\documentclass[aspectratio=1610, handout]{beamer}%, handout
     \usepackage{tikz}
     \usepackage{svg}
+    \input{header}
     \definecolor{backgroundColor}{HTML}{2D2D2D}
     \usetikzlibrary{arrows}
     \usetikzlibrary{backgrounds}
+    %\begin{frame}
     \begin{document}
     \begin{tikzpicture}[scale=0.45, every node/.style={scale=0.6},color=white,]
         \tikzstyle{myarrows}=[thick, line width=1.7mm,-open triangle 90,
@@ -18,7 +20,7 @@
         \LARGE{Client}
     };
 
-    \onslide<1-1>{
+    \onslide<1-1|handout:1>{
         \node[xscale=-1] at (2.5,2) {
             \includesvg[width=1.5cm]{key_green.svg}
         };
@@ -32,7 +34,7 @@
     \node at (24,-2.5) {
         \LARGE{Serveur}
     };
-    \onslide<2-3>{
+    \onslide<2-3|handout:2>{
     \node[xscale=-1] at (2.5,2) {
         \includesvg[width=1.5cm]{key_purple.svg}
     };
@@ -68,11 +70,11 @@
     \node[inner sep=0,minimum size=0] at (12,-3) (MB) {}; % invisible node
     \node[inner sep=0,minimum size=0] at (12,-10) (WT) {}; % invisible node
 
-    \onslide<1-1>{
+    \onslide<1-1|handout:1>{
         \draw [-triangle 60, line width=3pt, green] (C1) -- (S1);
         \draw [-triangle 60, line width=3pt, green] (S2) -- (C2);
     }
-    \onslide<2-3>{
+    \onslide<2-3|handout:2>{
         \draw [-triangle 60, line width=3pt, orange] (S2) -- (MR2);
         \draw [-triangle 60, line width=3pt, orange] (MR1) -- (S1);
 
@@ -80,7 +82,7 @@
         \draw [-triangle 60, line width=3pt, purple] (ML2) -- (C2);
     }
 
-    \onslide<3-3>{
+    \onslide<3-3|handout:2>{
         \draw [-triangle 60, line width=3pt, normalBlockColor] (MB) -- (WT);
 
         \node at (12,-12) {
@@ -89,3 +91,4 @@
     }
     \end{tikzpicture}
 \end{document}
+%\end{frame}

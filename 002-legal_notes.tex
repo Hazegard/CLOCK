@@ -1,0 +1,188 @@
+%<*propIntelect>
+Si le logiciel peut être protégé par une licence, sa fonctionnalité en tant que telle n’est pas protégeable.
+\smallbreak
+Par exemple, le programme Word inclus dans la suite bureautique: 
+\smallbreak
+  \textbullet~~Office de Windows fait l’objet d’une protection juridique spécifique.
+  \smallbreak
+  \textbullet~~Mais la fonctionnalité de Word, à savoir être un logiciel de
+  traitement de texte, n’est pas protégeable par Microsoft.
+%</propIntelect>
+
+%<*loi>
+\bigbreak
+Le logiciel ne doit pas avoir été piraté
+\smallbreak
+Et :\smallbreak
+\textbullet~~Soit la license le permet
+\smallbreak
+\textbullet~~Soit cette rétroingénierie est effectué dans un but d'interropérabilité,
+ %</loi>
+
+ %<*interropérabilité>
+ \bigbreak
+ L’interopérabilité est la faculté pour un logiciel à fonctionner sur l’ensemble des
+ plateformes existantes.
+ %</interropérabilité>
+
+ %<*Resume>
+\bigbreak
+En résumé, il est interdit de décompiler une application à des fins autres 
+ que de rétroingénierie, ce qui fait que pour analyser une application, il est 
+illégale d'analyser le code source, et encore plus de le partager
+ %</Resume>
+
+ %<*BugBounty>
+ \textbf{\uline{Bug Bounty :}}
+Un bug Bounty est une récompense qu'une société offre à  tous ceux qui trouvent des failles
+ de sécurité dans un périmètre donné.\\
+Ce périmètre peut être un site web, une application, une API...etc., etc. C'est donc à
+ l'entreprise de déterminer les services que les gens vont pouvoir explorer à  la recherche
+  de failles de sécurité.\\
+Il y a bien sûr des règles à  respecter et chaque Bug Bounty doit énoncer clairement les
+ limites que le hacker ou l'expert ne doit pas franchir, mais en général, comme ça se passe
+  sur des services en production, il vaut mieux éviter de tout casser si on veut sa récompense.\\
+
+D'ailleurs, concernant le montant de la récompense, c'est assez variable d'une société à
+ l'autre et ça dépend surtout du type de faille remontée. Plus la faille est critique,
+  complexe, bien documentée avec si possible un PoC (Proof of concept) et pourquoi pas
+   des recommandations, voire un patch, plus la récompense sera grande.
+
+Évidemment, si vous trouvez des failles qui ont déjà  été trouvées par un autre,
+ vous ne recevrez aucune récompense.
+ \bigbreak
+%</BugBounty>
+
+%<*Tweet>
+Cela permet également d'éviter, pour les entreprises ce genre de choses.\\
+Etant donné qu'apple ne fournit pas de bugbounty pour macOS, un chercheur a révélé publiquement
+ une faille critique sur macOS.\\
+ Cependant, il précise qu'il a pris cette décision car cette vulnérabilité n'est pas accessible 
+  à distance
+%</Tweet>
+
+
+
+
+
+
+
+
+
+
+
+
+L’ingénierie inverse, rétro-conception ou « reverse engineering » est l’« activité qui consiste à étudier
+un objet pour en déterminer le fonctionnement interne ou la méthode de fabrication » 45 . Ainsi, grâce
+aux méthodes de rétro-conception, il est possible de comprendre le comportement du logiciel, sans
+en détenir ni le code source ni la documentation 6 .
+
+Si les éditeurs sont nombreux à interdire ou limiter l’ingénierie inversée de leurs logiciels dans leurs
+conditions d’utilisation, l’ingénierie inverse reste une pratique légale dans de nombreux pays, bien
+qu’encadrée. Elle est notamment autorisée à des fins de d’interopérabilité. Et dans les pays où cette
+pratique est autorisée, les clauses ne sont pas valables, ou le sont dans les limites définies par la loi.
+Enfin, l’ingénierie inversée est gouvernée par le droit de la propriété intellectuelle, droit propre à
+chaque Etat. Il en découle une relative insécurité juridique pour les prestataires de services ou les
+chercheurs.
+
+
+C’est l’article L 122-6-1 du code de la propriété intellectuelle français qui autorise le reverse
+engineering. Mais cette autorisation est strictement encadrée.
+Le principe est celui du droit de propriété exclusif et opposable de l’auteur du logiciel, droit concédé
+partiellement aux « clients » ou « acheteurs » par le biais de licences d’utilisation, par exemple.
+L’article 122-6-1 qui autorise l’ingénierie inversée constitue une exception à ce système. Exception
+envisagée dans deux cas de figure : le premier est l’exigence d’interopérabilité, le second l’utilisation
+conforme à la destination du logiciel.
+
+
+Le reverse engineering d’un logiciel à des fins d’interopérabilité permet, grâce à une technique de
+décompilation, d’autoriser le logiciel à « échanger des informations » et « utiliser mutuellement des
+informations » avec d’autres logiciels. 22 Souvent indispensable pour la création d’outil compatibles
+avec certains logiciels ou terminaux, le reverse engineering reste encadré à des fins de protection de
+la propriété intellectuelle. L’objectif étant d’exclure tout espionnage industriel, copie, ou
+contournement de mesures de sécurité. Pour ce faire, trois conditions sont à respecter :
+
+
+
+Que les informations permettant l’interopérabilité ne soient accessibles par aucun autre
+moyen ;
+Que le reverse engineering ne soit exercé que par l’utilisateur légitime du logiciel ;
+Que le reverse engineering ne concerne que les parties du logiciel directement concernées
+par l’interopérabilité.
+C’est le contrat qui définira la finalité, la « destination » du logiciel. Ce système est également celui
+proposé par le droit finlandais.
+
+1.1.1.2.2 Le contournement des mesures de protection
+Le reverse engineering ne doit pas « porter atteinte sciemment, à des fins autres que la recherche
+[aux mesures de protection du droit d’auteur] » 23 .
+
+
+« On n'a donc pas le droit en France de démontrer techniquement qu'un logiciel présente des failles
+de sécurité, ou que la publicité pour ces logiciels est mensongère. Dormez tranquilles, citoyens, tous
+vos logiciels sont parfaits. » 28
+Cette citation du chercheur agissant sous le pseudonyme de Guillermito fait suite à sa condamnation
+pour avoir « reproduit, modifié, et rassemblé tout ou partie du logiciel Viguard puis procédé à la
+distribution gratuite de logiciels tirés des sources du logiciel Viguard » 29 , en contradiction avec la
+licence. « Le fait que celui qui agissait sous le pseudonyme Guillermito ait commis ces actes dans le
+but de détecter les failles de sécurité du logiciel Viguard et d’en faire profiter la communauté dans
+les forums de discussion n’entre pas dans le cadre de [l’exception] prévue au monopole de l’auteur
+[prévue par l’article L122-6-1 du Code de procédure pénale]. » 30
+
+En droit français, la simple recherche de failles de sécurité n’est pas réprimée en tant que telle, sous
+réserve de respect du régime juridique relatif au respect du droit de la propriété intellectuelle. C’est la publication des résultats, la « démonstration technique » de ces recherches qui peut être
+sanctionnée par l’article 323-3-1 du Code pénal.
+
+
+Full et responsible disclosure 32
+Il existe plusieurs chapelles parmi les passionnés de sécurité informatique. Certains vont informer le
+propriétaire du site internet, ou l’éditeur du logiciel, de l’existence de cette faille afin que ce dernier
+la corrige au plus vite : c’est ce qu’on appelle un « white hat » 33 . Parmi ceux-ci, certains sont
+partisans du « full disclosure » ou divulgation complète, alors que d’autres prônent le « responsible
+disclosure » ou divulgation responsable.
+La différence entre les deux positions tient à l’étendue des informations révélées. Dans le cas de la
+divulgation « complète », toutes les informations connues concernant la faille sont publiées, y
+compris les « exploits », c’est-à-dire les moyens d’exploiter la faille. L’idée est que la faille sera plus
+rapidement prise au sérieux et corrigée si toutes les données à son sujet sont rendues publiques. Les
+partisans de la divulgation « responsable » choisissent de laisser un certain temps à l’intéressé pour
+corriger la faille, et s’ils choisissent de divulguer l’existence d’une faille, ils ne fournissent en principe
+pas les « exploits ». D’autres enfin estiment qu’effectuer une divulgation complète mais dans un
+cercle d’initiés restreints constitue également une « responsible disclosure ».
+
+L’article 323-3-1 34 du Code pénal sanctionne « le fait, sans motif légitime, d'importer, de détenir,
+d'offrir, de céder ou de mettre à disposition un équipement, un instrument, un programme
+informatique ou toute donnée conçus ou spécialement adaptés pour commettre une ou plusieurs des
+infractions prévues par les articles 323-1 à 323-3 », c’est-à-dire le fait d'accéder, de se maintenir
+frauduleusement, d’entraver, de fausser le fonctionnement ou d’introduire des données dans un
+systèmes de traitement automatisé de données [STAD]. Ici, c’est le fait d’offrir, de céder ou de
+mettre à disposition qui remet en cause ces pratiques de « disclosure ».
+
+
+Il est légitime d’envisager que la finalité de sécurité informatique du reverse engineering entre dans
+la définition du motif légitime évoqué dans l’article 323-3-1 du Code pénal. Mais ce constat amène
+plusieurs interrogations : Ne peut-on pas imaginer que le droit à l’information constitue un motif
+légitime de possession ou de diffusion d’un des outils incriminés par l’article 323-3-1 du Code pénal ?
+D’autre part, doit-on apprécier la « finalité de sécurité informatique » de façon directe ou indirecte ?
+En effet, le motif légitime ne manquera pas d’être invoqué de façon indirecte par certains « white
+hat » pour justifier des « full disclosure ». Leur raisonnement sera de justifier des divulgations
+complètes en expliquant que ces dernières placent les titulaires des droits sur les sites ou les logicielsvulnérables dos au mur, et les oblige à intervenir car la faille est accessible à n’importe quel « script
+kiddies » 35 .
+
+
+1.2 Chapitre 2. Le cas particulier du reverse engineering de malwares
+
+
+Bien évidemment, le malware n’est pas protégé 37 par la propriété intellectuelle. Son analyse ne peut
+donc être soumise au régime juridique décrit ci-dessus. En tant que tel, l’ingénierie inversée de
+malware est légale. Mais plus que le fait de procéder à une analyse du malware, c’est sa possession
+qui risque de tomber sous le coup de l’article 323-3-1 du Code pénal.
+
+L’article 323-3-1 39 du Code pénal sanctionne « le fait, sans motif légitime, d'importer, de détenir,
+d'offrir, de céder ou de mettre à disposition un équipement, un instrument, un programme
+informatique ou toute donnée conçus ou spécialement adaptés pour commettre une ou plusieurs
+des infractions prévues par les articles 323-1 à 323-3 », c’est-à-dire le fait d'accéder, de se maintenir
+frauduleusement, d’entraver, de fausser le fonctionnement ou d’introduire des données dans un
+systèmes de traitement automatisé de données [STAD]. Ce comportement « est puni des peines
+prévues respectivement pour l'infraction elle-même ou pour l'infraction la plus sévèrement
+réprimée », c’est-à-dire au maximum 7 ans de prison et 100 000€ d’amende.
+
+

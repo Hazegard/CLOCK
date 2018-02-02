@@ -1,0 +1,41 @@
+%<*Interet>
+\textbullet~~Les informations générées dynamiquement ne peuvent être récupérée par 
+ une analyse statique\\
+\textbullet~~Certaines méthodes d'obfuscation sont difficiles à déchiffrer. 
+  Cependant, étant donné qu'au sein de l'application, ces valeurs vont être 
+   déchiffrées, on peut essayer de la récupérer à ce moment\\
+\textbullet~~ Certaines requêtes ne peuvent être déciffrée par un MITM,
+ on peut alors essayer de lire les données de la requête au moment de l'envoie  
+ ou de la réception de la requête
+%</Interet>
+
+%<*Utilisation>
+\bigbreak
+\textbf{\uline{Débugger:}}Permet de faire mettre des breakpoints
+Cependant, étant donné qu'on a pas accès au code source,
+ il est nécessaire de décompiler l'application en smali,
+ reconstruire le projet et recompiler l'application\\
+ \textbf{\uline{Mémoire:}} Permet de récupérer certaines valeurs 
+%</Utilisation>
+
+%<*Environnement>
+\bigbreak
+\textbf{\uline{Emulateur:}} plus de facilité pour le rooter ainsi qu'installer Xposed\\
+\textbf{\uline{Root, Xposed:}}\\
+\textbf{\uline{Inspeckage:}}Démarrer des activités non déclarées, Désactiver le SSL, remplacer des paramètres d'application...
+\textbf{\uline{Android Device Monitor:}} Outil intégré à Android Studio 
+ offrant des fonctions de débug et d'analyse d'application\\
+%</Environnement>
+
+%<*Debugger>
+\bigbreak
+\textbf{\uline{Principe}}:
+\textbullet~~ On décompile l'APK, mais on reste au stade du smali\\
+\textbullet~~On importe les fichiers dans Android Studio pour y générer un nouveau projet
+\textbullet~~On place les points d'arrêts
+\textbullet~~On lance l'application
+\textbullet~~On analyse l'état de la mémoire de l'application aux points d'arrêts
+
+Enfin, si on souhaite produire une version modifiée de l'application, il est possible de recompiler
+le smali pour produire un nouveau APK
+%</Debugger>

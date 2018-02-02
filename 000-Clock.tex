@@ -1,0 +1,75 @@
+\documentclass[aspectratio=1610, twocolumn]{beamer}%, handout
+\input{header}
+\setbeameroption{show notes on second screen=left}
+\begin{document}
+\framegreen
+{
+  \nologo
+  \begin{frameTitle}
+  \maketitle
+  \end{frameTitle}
+}
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%TODO%%%%%%%%%%%
+%%%%Analyse réseau%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%
+
+% Ajouter pause qu'est ce que l'analyse statique
+% AJouter pause avant code exemples analyse statique
+
+\begin{frameNoSB} 
+\frametitle{\inserttitle}
+\begin{columns}
+  \begin{column}{.66\linewidth}
+    \vspace{0pt}
+    \tableofcontents
+  \end{column}
+  \begin{column}{0.33\linewidth}
+  \includegraphics[width=0.75\linewidth]{android.png}
+  \end{column}
+\end{columns}
+\end{frameNoSB}
+
+\framepurple
+\input{001-retro}
+
+\framebrown
+\input{002-legal}
+
+\framebluegray
+\input{003-apk.tex}
+
+\frameyellow
+\input{005-anastat}
+
+\framegray
+\input{004-elepriv}
+
+\frameorange
+\input{007-anares}
+
+\framered
+\input{006-anadyn}
+
+\framepink
+\input{008-evit}
+
+\frameblue
+\input{009-acteurs}
+
+\framegreen
+\begin{frame}[plain]
+  \begin{minipage}{\linewidth-\beamerleftmargin+\beamerrightmargin}
+    \begin{block}{}
+      \vspace{0.5cm}
+      \begin{center}
+        {\LARGE{Merci !}}\\
+        \pause
+        Souriez, vous êtes tracés !
+      \end{center}
+      \vspace{0.25cm}
+  \end{block}
+  \end{minipage}
+\end{frame}
+\end{document}

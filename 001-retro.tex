@@ -1,0 +1,41 @@
+\documentclass[11pt,aspectratio=1610]{beamer}%, handout
+\input{header.tex}
+\setbeameroption{show notes on second screen=top}
+
+\begin{document}
+ 
+\section{Qu'est ce que la rétroingénierie ?}
+  \begin{frame}[t]
+      \slidetitle[]
+      \note{\onslide+<1->{\ExecuteMetaData[001-retro_notes.tex]{Definition}}}
+      \note{\onslide+<3->{\ExecuteMetaData[001-retro_notes.tex]{Objectifs}}}
+      \begin{block}{Principe :}<2->
+        \onslide+<3->{
+        Analyser un programme sans ses sources, pour en comprendre le fonctionnement interne.
+        }
+      \end{block}
+      \vfill
+      \begin{columns}
+        \begin{column}{.7\linewidth}<4->
+          \begin{block}{Objectifs :}
+            \begin{itemize}
+            \item<5-> Interopérabilité
+            \item<6-> Documentation
+            \item<7-> Veille compétitive
+            \item<8-> Recherche de failles de sécurités
+            \item<9-> Piratage
+            \end{itemize}
+          \end{block}
+        \end{column}
+        \begin{column}{.25\linewidth}
+          \centering
+          \includegraphics[width=\linewidth]{android_loupe.png}
+        \end{column}
+      \end{columns}
+      \vfill
+  \end{frame}
+  % \begin{frame}
+  %   \slidetitle[]
+  %   Test
+  % \end{frame}
+\end{document}

@@ -1,0 +1,57 @@
+%<*Composition>
+\textbf{\uline{AndroidManifest}}\\
+\textbullet~~Fichier xml qui contient:\\
+\textbullet~~Permissions\\
+\textbullet~~Liste des activités\\
+\textbullet~~Services
+\smallbreak
+\textbf{\uline{Assets}}\\
+Autres resources (polices...)
+\smallbreak
+\textbf{\uline{Classes.dex}}\\
+Code binaire de l'application, limité à 65 000 méthodespar fichier,
+mais il faut éviter de le dépasser, parce que le support au-delas n'est pas assuré
+\smallbreak
+
+\textbf{\uline{META-INF}}
+\smallbreak
+Informations autour de l'application:\\
+\textbullet~~La classe à lancer\\
+\textbullet~~ Version du package\\
+\textbullet~~ Numéro de version\\
+\textbf{\uline{res}}\\
+Ressources non compilées, mais standares\\
+ex: Layout, Drawables, 
+\smallbreak
+\textbf{\uline{resources.arsc}}\\
+Resources compilées, en format binaires xml
+%</Composition>
+
+%<*Compilation>
+Le code java est compilé en byte-code Java, puis rassemblé,
+compacté et optimisé via le programme dx en un executable dalvik,
+byte-code spécifique, prêt à être exploité par la machine
+virtuelle dalvik ou ART.
+\bigbreak
+Ce fichier n'est pas compressé, ce qui permet à la machine virtuelle de mapper
+le code en mémoire et de le partager très facilement\\
+%</Compilation>
+
+%<*ARTVSDalvik>
+\textbf{\uline{JIT:}}\\
+\textbullet~~ Just In time:\\
+L'application est compilé en langage machine uniquement au moment 
+ou le code est nécessaire
+Occupe moins d'expace mémoire\\
+Plus lents\\
+Disponible pour les versions inférieurs à Kitkat\\
+\textbf{\uline{AOT:}}\\
+\textbullet~~ Ahead of time:\\
+L'application est compilé en langage machine au moment de son installation
+Bien plus rapide\\
+Occupe plus d'expace mémoire\\
+Disponible pour les versions supérieures à Kitkat
+\\
+A partir de nougat, ART a été modifié pour utiliser à la fois un comportement JIT et AOT, 
+permettant d'allier le meilleur des deux méthodes
+%</ARTVSDalvik>

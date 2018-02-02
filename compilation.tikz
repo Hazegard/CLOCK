@@ -1,0 +1,75 @@
+\begin{tikzpicture}[scale=0.6, every node/.style={scale=0.6}, show background rectangle,background rectangle/.style={fill=backgroundColor},color=white,]
+    \tikzstyle{myarrows}=[thick, line width=1.7mm,-open triangle 90,
+    postaction={draw, line width=6.5mm, shorten >=4mm, -},
+    postaction={draw, backgroundColor, shorten >= 1.3mm, -triangle 90, line width=1mm},
+    postaction={draw, line width=5mm, backgroundColor, shorten >= 4mm, -}]
+    
+\draw [ultra thick, rounded corners=5] (0,0) rectangle node{
+\begin{tabular}{c}
+Code source\\Java (.java)
+\end{tabular}
+} (3,-1.5);
+\node[inner sep=0,minimum size=0] at (1.5,-1.5) (CS) {}; % invisible node
+\draw [ultra thick, rounded corners=5] (0,-3.5) rectangle node{
+\begin{tabular}{c}
+Bytecode\\Java (.class)
+\end{tabular}
+} (3,-5);
+\node[inner sep=0,minimum size=0] at (1.5,-3.5) (BJ0) {}; % invisible node
+
+\draw[myarrows] (CS) to (BJ0);
+\node[inner sep=0,minimum size=0] at (1.5,-5) (BJ1) {}; % invisible node
+
+\node[inner sep=0,minimum size=0] at (1.5,-10) (JB) {}; % invisible node
+\draw[myarrows] (BJ1) to (JB);
+
+
+\draw [ultra thick] (0,-10) rectangle node{
+Java Bytecode
+} (3,-11);
+\draw [ultra thick] (0,-11) rectangle node{
+Java VM
+} (3,-12);
+
+\draw [ultra thick, rounded corners=5] (6,0) rectangle node{
+\begin{tabular}{c}
+Code source\\Java (.java)
+\end{tabular}
+} (9,-1.5);
+\node[inner sep=0,minimum size=0] at (7.5,-1.5) (CCSS) {}; % invisible node
+
+\node[inner sep=0,minimum size=0] at (7.5,-3.5) (BJ0) {}; % invisible node
+
+\draw[myarrows] (CCSS) to (BJ0);
+
+\draw [ultra thick, rounded corners=5] (6,-3.5) rectangle node{
+\begin{tabular}{c}
+Bytecode\\Java (.class)
+\end{tabular}
+} (9,-5);
+
+\node[inner sep=0,minimum size=0] at (7.5,-5) (BJ1) {}; % invisible node
+
+
+\node[inner sep=0,minimum size=0] at (7.5,-7) (BD0) {}; % invisible node
+\draw[myarrows] (BJ1) to (BD0);
+\draw [ultra thick, rounded corners=5] (6,-7) rectangle node{
+\begin{tabular}{c}
+Bytecode\\Dalvik (.dex)
+\end{tabular}
+} (9,-8.5);
+\node[inner sep=0,minimum size=0] at (7.5,-8.5) (BD1) {}; % invisible node
+
+\node[inner sep=0,minimum size=0] at (7.5,-10) (DE) {}; % invisible node
+\draw[myarrows] (BD1) to (DE);
+\draw [ultra thick] (6,-10) rectangle node{
+Dalvik Exe
+} (9,-11);
+\draw [ultra thick] (6,-11) rectangle node{
+Dalvik/ART VM
+} (9,-12);
+
+\node[font=\Large] at (5.75,-2.5) {javac};
+\node[font=\Large] at (3.25,-2.5) {javac};
+\node[font=\Large] at (6,-6) {dx};
+\end{tikzpicture}

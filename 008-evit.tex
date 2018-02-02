@@ -1,0 +1,66 @@
+\documentclass[aspectratio=1610]{beamer}%, handout
+\input{header.tex}
+\setbeameroption{show notes on second screen=top}
+\framegreen
+\begin{document}
+ 
+
+\section{Comment s'en prémunir?}
+\begin{frame}
+  \slidetitle[La sécurité par l'obscurité]
+  \note{\ExecuteMetaData[008-evit_notes.tex]{Obfuscation}}
+  \begin{columns}
+    \begin{column}[t]{0.48\linewidth}
+      \centering
+      \begin{block}{Obscurcire son code}<2->
+        \begin{itemize}
+          \item<3-> Obfuscation de code:
+          \begin{itemize}
+          \item<4-> Ajout d'instructions inutiles
+          \item<5-> Ajout d'arguments inutiles sur les méthodes
+          \item<6-> Minimication du code
+          \item<7-> Génération dynamique de string
+          \end{itemize}
+          \item<8-> Chiffrement du programme
+          \item<9-> Exécution de code distant
+          \end{itemize}
+      \end{block}
+    \end{column}
+    \begin{column}[t]{0.48\linewidth}
+      \centering
+        \begin{figure}
+          \includegraphics[width=\linewidth]{obscurity.png}
+          \caption{XKCD 257}
+        \end{figure}
+    \end{column}
+  \end{columns}
+  \end{frame}
+  \begin{frame}
+    \slidetitle[L'absurdité de l'obscurité]
+    \note{\ExecuteMetaData[008-evit_notes.tex]{Limites}}
+    \begin{columns}
+      \begin{column}{0.48\linewidth}
+        \begin{block}{Principe de Kerckhoffs}<2->
+          \centering
+          \onslide<3->{
+          ``Un système est considéré comme étant sécurisé de par sa conception et non parce que sa
+          conception est inconnue de l'adversaire''
+          }
+        \end{block}
+        \begin{block}{Les limites de l'obfuscation}<4->
+          \begin{itemize}
+          \item<5-> Débogage difficile
+          \item<6-> Protection temporaire
+          \item<7-> Potentiel perte de performances
+          \item<8-> Qualité du code en baisse
+          \item<9-> Appel à des librairies externes non obfuscables
+          \end{itemize}
+        \end{block}
+      \end{column}
+      \begin{column}{0.48\linewidth}
+        \includegraphics[width=\linewidth]{obscurity.jpg}
+      \end{column}
+    \end{columns}
+
+    \end{frame}
+\end{document}

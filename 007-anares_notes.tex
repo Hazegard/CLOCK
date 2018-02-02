@@ -1,0 +1,20 @@
+%<*Anares>
+\textbf{\uline{Analyse réseau:}}\\
+ntercepter le traffic entrant et sortant de l’application, pour détermier quisont les destinataires et comment sont échangés les messages
+%</Anares>
+
+
+%<*Objectifs>
+
+\textbf{\uline{Objectifs:}}\\
+\textbullet~~Déterminer les serveurs avec qui l'application échange\\
+\textbullet~~Traffic http: intercepter et lire les échanges\\
+\textbullet~~Traffic https: intercepter, déchiffrer et lire les échanges\\
+%</Objectifs>
+
+%<*Environnement>
+\textbf{\uline{Analyse réseau:}}\\
+\textbullet~~Emulateur avec ProxyDroid: modifie les règles iptables pour s'assurer que l'application passe forcément par le proxy 
+\textbullet~~Wireshark pour analyser les paquets interceptés
+\textbullet~~JustTrustMe pour desactiver la verification des certificats SSl/TLS
+%</Environnement>

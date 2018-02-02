@@ -1,0 +1,67 @@
+\documentclass[aspectratio=1610]{beamer}%, handout
+\input{header.tex}
+\setbeameroption{show notes on second screen=top}
+\framered
+\begin{document}
+\section{Pourquoi?}
+
+\begin{frame}[t]
+  \slidetitle[La traque aux utilisateurs]
+  \note{\ExecuteMetaData[009-acteurs_notes.tex]{Traqueurs}}
+  \onslide<2->{\includesvg[height=0.05\linewidth]{criteo.svg}}
+  \hfill
+  \begin{overlayarea}{0.08\linewidth}{0.08\linewidth}
+    \only<4-4>{\includegraphics[height=\linewidth]{teemo_0.png}}
+    \only<5->{\includegraphics[height=\linewidth]{teemo_1.png}}
+  \end{overlayarea}
+  \hfill
+  \onslide<3->{\includesvg[height=0.05\linewidth]{fidzup.svg}}
+  \vfill
+  \onslide<6->{
+  \begin{center}
+  ``Retrouver n’importe quel Français prendrait 5 secondes à une équipe de 20 personnes''
+  \end{center}}
+  \vfill
+  \onslide<7->{
+  \begin{center}
+    ``Le Président de la République est encore plus simple à trouver, car «il est fan de l’Équipe et est toujours suivi par une dizaine d’autres smartphones»''
+  \end{center}}
+  \vfill
+\end{frame}
+
+\begin{frame}
+  \slidetitle[La traque aux traqueurs]
+  \note{\ExecuteMetaData[009-acteurs_notes.tex]{Defenseurs}}
+  \vfill
+  \vfill
+  \begin{columns}
+    \begin{column}{0.15\linewidth}
+      \centering
+      \vfill
+      \onslide<3->{
+      \includesvg[width=0.75\linewidth]{exodus.svg}}
+    \end{column}
+    \begin{column}{0.7\linewidth}
+      \centering
+      \begin{block}{Comment savoir qui nous traque?}<2->
+        \begin{description}[align left]
+          \item<3-> [Exodus Pricacy] Association Française 
+          \item<4-> [Yale Privacy Lab] Laboratoire de recherches mêlant vie privée, sécurité et anonimat
+          \item<5-> [Kimetrak]Extension Chrome/Firefox pour détecter les traqueurs
+        \end{description}
+      \end{block}
+    \end{column}
+    \begin{column}{0.15\linewidth}
+      \centering
+      \vfill
+      \onslide<4->{
+    \includesvg[width=0.75\linewidth]{yaleprivacylab.svg}}
+    \end{column}
+  \end{columns}
+  \vfill
+  \onslide<5->{
+    \centering
+    \includegraphics[width=0.12\linewidth]{kimetrak.png}
+    }
+\end{frame}
+\end{document}

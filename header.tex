@@ -1,0 +1,83 @@
+\usepackage{graphics}
+\usepackage{pifont}
+\usepackage{ulem}
+\usepackage{xcolor}
+\usepackage{modifycolor}
+\usepackage{lipsum}
+\usepackage{fontspec}
+\usepackage{caption}
+\renewcommand{\figurename}{FIGURE}
+\captionsetup[figure]{labelfont={color=leftFootlineColor, scriptsize}, textfont={color=normalBlockColor, scriptsize}}
+\usepackage{tabularx}
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\usepackage{tikz}
+\usepackage{standalone}
+\usepackage{svg}
+\usepackage{multicol}
+\usepackage{catchfilebetweentags}
+\usepackage{xifthen}
+\usetikzlibrary{arrows}
+\usetikzlibrary{backgrounds}
+\setmonofont[
+  Contextuals={Alternate}
+]{FuraCode Nerd Font}
+%\usepackage[T1]{fontspec}
+%\usepackage[scaled]{berasans}
+%\usepackage[scale=1,sfdefault,light]{roboto}
+\setsansfont{Roboto Medium}
+\usepackage{pgfpages}
+
+
+\usepackage[cache=false,outputdir=build]{minted}
+\definecolor{bg_code}{HTML}{282828}
+\usemintedstyle{darcula}
+\setminted{
+      fontsize=\scriptsize, 
+      linenos,
+      numbersep=0pt,
+      gobble=5,
+      framesep=3mm} 
+      \renewcommand{\theFancyVerbLine}{\texttt{{{\arabic{FancyVerbLine}}}}}
+\usepackage{adjustbox}
+\usepackage{environ}% Required for \NewEnviron, i.e. to read the whole body of the environment
+%blue/red/pink/purple/yellow/orange/green/gray/bluegray/brown
+\usepackage{tikz}
+\usetikzlibrary{patterns}
+\usepackage[french]{babel}
+% This is the file main.tex
+\usepackage{beamerthemesideblue}
+
+
+\setbeamerfont{note page}{size=\footnotesize}
+\setbeamertemplate{note page}[custom]
+\setbeamercolor{note page}{bg=backgroundColor, fg=white}
+
+%\usecolortheme{red}
+\logo{\includegraphics[height=0.70cm]{logo.png}}
+\title[]{La rétroingénierie appliquée à Android}
+\subtitle{La traque aux traqueurs}
+\author{Maxime Catrice}
+\date{\today}
+\titlegraphic{\includegraphics[height=0.70cm]{logo.png}}
+
+\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=false]
+\setbeamercolor{background canvas}{bg=backgroundColor}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\beamertemplatenavigationsymbolsempty
+\input{funcs}
+\newcommand{\nologo}{\setbeamertemplate{logo}{}}
+
+\newcommand{\slidetitle}[1][]{
+  \frametitle{\insertsection\ifthenelse{\equal{#1}{}}{}{: #1}}
+}
+\newcommand{\mono}[1]{
+\texttt{#1}
+}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+

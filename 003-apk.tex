@@ -1,0 +1,71 @@
+\documentclass[aspectratio=1610]{beamer}%, handout
+  \input{header.tex}
+  \setbeameroption{show notes on second screen=top}
+  \begin{document}
+  
+  \section{Les aplications Android}
+  \begin{frame}
+    \slidetitle[Composition]
+    \note{\ExecuteMetaData[003-apk_notes.tex]{Composition}}
+    \pause
+    \begin{columns}
+      \begin{column}{0.4\linewidth}
+        \texttt{\scriptsize
+        \begin{itemize}
+        \item [~]\includesvg[height=0.8 \baselineskip]{xml@2x.svg}~AndroidManifest.xml
+        \item \includegraphics[height=0.8 \baselineskip]{sourceFolder@2x.png}~assets
+        \item [~]\includesvg[height=0.8 \baselineskip]{javaClass@2x.svg}~classes.dex
+        \item \includegraphics[height=0.8 \baselineskip]{sourceFolder@2x.png}~lib/
+        \item \includegraphics[height=0.8 \baselineskip]{sourceFolder@2x.png}~META-INF/
+        \item \includesvg[height=0.8 \baselineskip]{ResourcesRoot.svg}~res/
+        \item [~] \includegraphics[height=0.8\baselineskip]{component@2x.png}~resources.arsc
+        \end{itemize}
+        }
+      \end{column}
+      \begin{column}{0.6\linewidth}
+        {\scriptsize
+        \begin{itemize}%[label=--]
+        \item<3-> [~] Permissions, Activités...
+        \item<4-> [~] Ressources non compilées, non standards
+        \item<5-> [~] Code binaire de l'application
+        \item<6-> [~] Librairies externes
+        \item<7-> [~] Informations autour de l'application
+        \item<8-> [~] Ressources standards, non compilées
+        \item<9-> [~] Ressources compilées
+        \end{itemize}
+        }
+      \end{column}
+    \end{columns}
+  \end{frame}
+  \begin{frame}
+    \slidetitle[Compilation]
+    \note{\ExecuteMetaData[003-apk_notes.tex]{Compilation}}
+    \pause
+    \note{\onslide+<3->{\ExecuteMetaData[003-apk_notes.tex]{ARTVSDalvik}}}
+    \begin{columns}
+      \begin{column}{0.5\linewidth}
+        \begin{figure}
+          \vspace{-0.5cm}
+          \input{compilation.tikz}
+          \vspace{-0.25cm}
+          \caption{Compilation Java \& Android}
+        \end{figure}
+      \end{column}
+    \begin{column}{0.5\linewidth}
+      \pause
+      \begin{block}{
+        ~~~~~~~~~~~~~ART \hfill ~vs \hfill Dalvik~~~~~~~~~~~~
+      }
+        \pause
+        \begin{tabularx}{\textwidth}{YY}
+        JIT & AOT \\
+        \texttt{<=}4.4 & \texttt{>=}4.4
+        \end{tabularx}
+        \centering
+        \pause
+        \texttt{>=}7.0: AOT \& JIT
+      \end{block}
+    \end{column}
+  \end{columns}
+\end{frame}
+\end{document}

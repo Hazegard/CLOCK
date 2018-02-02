@@ -1,0 +1,296 @@
+\ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/theme/monTheme.sty,v 1.0 7/08/2016 0:04:14 G.FALLOURD-M.LEBRETON Exp $
+\mode<presentation>
+%\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
+\definecolor{backgroundColor}{HTML}{2D2D2D}
+\definecolor{sectionColor}{HTML}{BBDEFB}%100
+\definecolor{subsectionColor}{HTML}{0D47A1}%900
+\definecolor{sectionTextColor}{HTML}{000000}%0
+\definecolor{subsectionTextColor}{HTML}{FFFFFF}%1000
+\definecolor{leftFootlineColor}{HTML}{1976D2}%700
+\definecolor{middleFootlineColor}{HTML}{2196F3}%500
+\definecolor{rightFootlineColor}{HTML}{90CAF9}%200
+\definecolor{authorColor}{HTML}{000000}%0
+\definecolor{footlineTitleColor}{HTML}{000000}%0
+\definecolor{instituteColor}{HTML}{000000}%0
+\definecolor{dateColor}{HTML}{000000}%0
+\definecolor{pageColor}{HTML}{000000}%0
+\definecolor{titleColor}{HTML}{42A5F5}%400
+\definecolor{titleTextColor}{HTML}{000000}%0
+\definecolor{bodyColor}{HTML}{FFFFFF}%1000
+\definecolor{normalTextColor}{HTML}{FFFFFF}%0
+\definecolor{exampleTextColor}{HTML}{2E7D32}%800 vert
+\definecolor{alertTextColor}{HTML}{C62828}%800 rouge
+\definecolor{chipColor}{HTML}{0D47A1}%900
+\definecolor{chipTextColor}{HTML}{FFFFFF}%1000
+\definecolor{normalBlockColor}{HTML}{64B5F6}%300
+\definecolor{normalTitleBlockColor}{HTML}{0D47A1}%900
+\definecolor{normalBlockTextColor}{HTML}{000000}%1000
+\definecolor{normalBlockTitleTextColor}{HTML}{FFFFFF}%1000
+\definecolor{exampleBlockColor}{HTML}{00E676}%A400 vert
+\definecolor{exampleTitleBlockColor}{HTML}{FF1744}%A700 vert
+\definecolor{exampleBlockTextColor}{HTML}{FFFFFF}%1000
+\definecolor{exampleBlockTitleTextColor}{HTML}{FFFFFF}%1000
+\definecolor{alertBlockColor}{HTML}{EF9A9A}%200 rouge
+\definecolor{alertTitleBlockColor}{HTML}{D32F2F}%700 rouge
+\definecolor{alertBlockTextColor}{HTML}{FFFFFF}%1000
+\definecolor{alertBlockTitleTextColor}{HTML}{FFFFFF}%1000
+\setbeamercolor{section in head/foot}{bg=sectionColor, fg=sectionTextColor}
+\setbeamercolor{subsection in head/foot}{bg=subsectionColor, fg=subsectionTextColor}
+\setbeamercolor*{block title}{fg=normalBlockTitleTextColor,bg=normalTitleBlockColor}
+\setbeamercolor*{block body}{fg=normalBlockTextColor,bg=normalBlockColor}
+\setbeamercolor*{block title alerted}{fg=alertBlockTitleTextColor,bg=alertTitleBlockColor}
+\setbeamercolor*{block body alerted}{fg=alertBlockTextColor,bg=alertBlockColor}
+\setbeamercolor*{block title example}{fg=exampleBlockTitleTextColor,bg=exampleTitleBlockColor}
+\setbeamercolor*{block body example}{fg=exampleBlockTextColor,bg=exampleBlockColor}
+\setbeamerfont{block title}{size={}}
+\setbeamercolor{titlelike}{fg=titleTextColor,bg=titleColor}
+\setbeamercolor*{normal text}{fg=normalTextColor,bg=bodyColor}
+\setbeamercolor*{example text}{fg=exampleTextColor}
+\setbeamercolor*{alerted text}{fg=alertTextColor}
+\useinnertheme{default}
+\setbeamercolor{itemize item}{fg=normalTitleBlockColor}
+\setbeamercolor{item projected}{bg=chipColor,fg=normalTitleBlockColor}
+\setbeamercolor*{sidebar}{bg=subsectionTextColor, fg=sectionColor}
+\setbeamercolor*{palette sidebar primary}{bg=subsectionColor,fg=subsectionTextColor}
+\setbeamercolor*{palette sidebar secondary}{fg=sectionTextColor}
+\setbeamercolor{section in toc}{fg=titleColor}
+\setbeamercolor{enumerate item}{ fg=normalTitleBlockColor}
+
+
+
+
+
+
+\usetikzlibrary{patterns}
+
+% defining the new dimensions and parameters
+\newlength{\hatchspread}
+\newlength{\hatchthickness}
+\newlength{\hatchshift}
+\newcommand{\hatchcolor}{}
+% declaring the keys in tikz
+\tikzset{hatchspread/.code={\setlength{\hatchspread}{#1}},
+         hatchthickness/.code={\setlength{\hatchthickness}{#1}},
+         hatchshift/.code={\setlength{\hatchshift}{#1}},% must be >= 0
+         hatchcolor/.code={\renewcommand{\hatchcolor}{#1}}}
+% setting the default values
+\tikzset{hatchspread=3pt,
+         hatchthickness=0.8pt,
+         hatchshift=0pt,% must be >= 0
+         hatchcolor=black}
+% declaring the pattern
+\pgfdeclarepatternformonly[\hatchspread,\hatchthickness,\hatchshift,\hatchcolor]% variables
+   {custom north west lines}% name
+   {\pgfqpoint{\dimexpr-2\hatchthickness}{\dimexpr-2\hatchthickness}}% lower left corner
+   {\pgfqpoint{\dimexpr\hatchspread+2\hatchthickness}{\dimexpr\hatchspread+2\hatchthickness}}% upper right corner
+   {\pgfqpoint{\dimexpr\hatchspread}{\dimexpr\hatchspread}}% tile size
+   {% shape description
+    \pgfsetlinewidth{\hatchthickness}
+    \pgfpathmoveto{\pgfqpoint{0pt}{\dimexpr\hatchspread+\hatchshift}}
+    \pgfpathlineto{\pgfqpoint{\dimexpr\hatchspread+0.15pt+\hatchshift}{-0.15pt}}
+    \ifdim \hatchshift > 0pt
+      \pgfpathmoveto{\pgfqpoint{0pt}{\hatchshift}}
+      \pgfpathlineto{\pgfqpoint{\dimexpr0.15pt+\hatchshift}{-0.15pt}}
+    \fi
+    \pgfsetstrokecolor{\hatchcolor}
+%    \pgfsetdash{{1pt}{1pt}}{0pt}% dashing cannot work correctly in all situation this way
+    \pgfusepath{stroke}
+   }
+
+   \setbeamertemplate{caption}{\raggedright\insertcaption\par}
+   
+   \setbeamercolor{itemize item}{fg=normalBlockColor}
+   \setbeamercolor{itemize subitem}{fg=normalTitleBlockColor}
+   \setbeamercolor{itemize description}{fg=normalTitleBlockColor}
+   \setbeamercolor{description item}{fg=normalTitleBlockColor}
+   \AtBeginEnvironment{block}{\setbeamercolor{itemize item}{fg=normalTitleBlockColor}}
+   \setbeamercolor{caption name}{fg=normalBlockColor}
+
+
+\newdimen\beamer@sidebarwidth
+\newdimen\beamer@headheight
+\beamer@sidebarwidth=4.5\baselineskip
+\beamer@headheight=2.5\baselineskip
+\reset@font
+\def\beamer@lefttext{left}
+\DeclareOptionBeamer{hideothersubsections}[]{\beamer@nav@subsectionstyle{show/show/hide}}
+\DeclareOptionBeamer{hideallsubsections}[]{\beamer@nav@subsectionstyle{hide}}
+\DeclareOptionBeamer{width}{\beamer@sidebarwidth=#1}
+\DeclareOptionBeamer{height}{\beamer@headheight=#1}
+\DeclareOptionBeamer{left}{\def\beamer@sidebarside{left}}
+\DeclareOptionBeamer{right}{\def\beamer@sidebarside{right}}
+\ExecuteOptionsBeamer{left}
+\ProcessOptionsBeamer
+\ifdim\beamer@headheight>0pt
+\defbeamertemplate*{frametitle}{sidebar theme}
+{%
+
+\nointerlineskip%
+\vskip-\beamer@headheight%
+\vbox to \beamer@headheight{%
+\vfil
+\leftskip=-\beamer@leftmargin%
+\advance\leftskip by0.3cm%
+\rightskip=-\beamer@rightmargin%
+\advance\rightskip by0.3cm plus1fil%
+{\usebeamercolor[fg]{frametitle}\usebeamerfont{frametitle}\bfseries\insertframetitle\par}%
+{\usebeamercolor[fg]{framesubtitle}\usebeamerfont{framesubtitle}\insertframesubtitle\par}%
+\vbox{}%
+
+\vskip-1em%
+\vfil
+}%
+}
+\defbeamertemplate*{headline}{sidebar theme}
+{%
+
+\begin{beamercolorbox}[wd=\paperwidth]{frametitle}
+\ifx\beamer@sidebarside\beamer@lefttext%
+\else%
+
+\hfill%
+\fi%
+\ifdim\beamer@sidebarwidth>0pt%
+\usebeamercolor[bg]{logo}%
+\vrule width\beamer@sidebarwidth height \beamer@headheight%
+\hskip-\beamer@sidebarwidth%
+\hbox to \beamer@sidebarwidth{\hss\vbox to
+\beamer@headheight{\vss\hbox{\color{fg}\insertlogo}\vss}\hss}%
+\else%
+\vrule width0pt height \beamer@headheight%
+\fi%
+\begin{tikzpicture}[remember picture,overlay]
+\fill[color=leftFootlineColor](-3,0) rectangle (12,1.2);
+%\fill[pattern=custom north west lines,hatchspread=4pt,hatchthickness=1pt,hatchcolor=middleFootlineColor] (-3,0) rectangle (12,1.2);
+
+\fill[preaction={fill, leftFootlineColor},pattern=north west lines, pattern color=middleFootlineColor] (-3,0) rectangle (20,1.2);
+\end{tikzpicture}
+\end{beamercolorbox}
+}
+\fi
+\def\beamer@sidebarformat#1#2#3{%
+
+\begin{beamercolorbox}[wd=\beamer@sidebarwidth,leftskip=#1,rightskip=1ex plus1fil,vmode]{#2}
+
+\vbox{}%
+
+#3\par%
+\vbox{}%
+\vskip-1.5ex%
+\end{beamercolorbox}
+}
+
+\defbeamertemplate*{section in sidebar}{sidebar theme}
+{%
+\vbox{%
+
+\vskip1ex%
+\beamer@sidebarformat{2pt}{section in sidebar}{\textbf{\textbullet~{\insertsectionhead}}}%
+}%
+}
+\defbeamertemplate*{section in sidebar shaded}{sidebar theme}%SHADED
+{%
+\vbox{%
+\vskip1ex%
+\beamer@sidebarformat{2pt}{section in sidebar}{\fontseries{t}\selectfont{\textbullet~\insertsectionhead}}%SHADED
+}%
+}
+\defbeamertemplate*{subsection in sidebar}{sidebar theme}
+{%
+\beamer@sidebarformat{5pt}{subsection in sidebar}{\ding{109}~\insertsubsectionhead}%
+}
+\defbeamertemplate*{subsection in sidebar shaded}{sidebar theme}%SHADED
+{%
+\beamer@sidebarformat{5pt}{subsection in sidebar shaded}{\color{black}\ding{109}~\insertsubsectionhead}%SHADED
+}
+\defbeamertemplate*{subsubsection in sidebar}{sidebar theme}
+{%
+\beamer@sidebarformat{8pt}{subsubsection in sidebar}{\ding{117}~\insertsubsubsectionhead}%
+}
+\defbeamertemplate*{subsubsection in sidebar shaded}{sidebar theme}%SHADED
+{%
+\beamer@sidebarformat{8pt}{subsubsection in sidebar shaded}{\color{black}\ding{117}~\insertsubsubsectionhead}%SHADED
+}
+\ifdim\beamer@sidebarwidth>0pt
+\setbeamersize{sidebar width \beamer@sidebarside=\beamer@sidebarwidth}
+\defbeamertemplate*{sidebar \beamer@sidebarside}{sidebar theme}
+{
+\begin{tikzpicture}[remember picture,overlay]
+\fill[preaction={fill, middleFootlineColor},pattern=north west lines, pattern color=leftFootlineColor] (0,-20) rectangle (2.20,20);
+%\node at (0,2) {\includegraphics[scale=0.3]{logo.png}};
+\end{tikzpicture}
+
+\beamer@tempdim=\beamer@sidebarwidth%
+\advance\beamer@tempdim by -6pt%
+{\usebeamerfont{title in sidebar}%
+\vskip1.5em%
+\hskip3pt%
+\insertshorttitle[width=\beamer@tempdim,center,respectlinebreaks]\par%
+\vskip1.25em%
+}%
+\insertverticalnavigation{\beamer@sidebarwidth}%
+\vfill
+\ifx\beamer@sidebarside\beamer@lefttext%
+\else%
+\llap{\usebeamertemplate***{navigation symbols}\hskip0.1cm}%
+\vskip2pt%
+\fi%
+\begin{tikzpicture}
+%\node at (2,0) {\includegraphics[scale=0.07]{logo.png}};
+\end{tikzpicture}
+}%
+\setbeamersize{text margin left=0.5cm,text margin right=0.5cm}
+\fi
+\setbeamercolor{author in head/foot}{bg=leftFootlineColor, fg=authorColor}
+\setbeamercolor{title in head/foot}{bg=middleFootlineColor, fg=footlineTitleColor}
+\setbeamercolor{institute in head/foot}{fg=instituteColor}
+\setbeamercolor{date in head/foot}{bg=rightFootlineColor, fg=dateColor}
+\defbeamertemplate*{footline}{infolines theme}
+{
+\leavevmode%
+\hbox{%
+\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.5ex,dp=1ex,center]{author in head/foot}%
+\usebeamerfont{author in head/foot}\insertshortauthor~~
+\insertshortinstitute
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.5\paperwidth,ht=2.5ex,dp=1ex,center]{title in head/foot}%
+\usebeamerfont{title in head/foot}\inserttitle~:~\insertsubtitle
+\end{beamercolorbox}%
+\begin{beamercolorbox}[wd=.25\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}%
+\usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+\insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+\end{beamercolorbox}
+}%
+\vskip0pt%
+}
+
+% \defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
+
+\defbeamertemplate*{note page}{custom}
+{%
+  %{%
+    %\scriptsize
+    %\usebeamerfont{note title}\usebeamercolor[fg]{note title}%
+    %\ifbeamercolorempty[bg]{note title}{}{%
+      %\insertvrule{0\paperheight}{note title.bg}%
+      \vskip0\paperheight%
+      %\nointerlineskip%
+    %}%
+  %}%
+  \ifbeamercolorempty[bg]{note page}{}{%
+    %\nointerlineskip%
+    \insertvrule{\paperheight}{note page.bg}%
+    \vskip-0.95\paperheight%
+  }%
+  % \hskip-0.5\paperwidth%
+  \begin{minipage}[t][0cm]{\linewidth}
+  %\vskip.25em
+  \nointerlineskip
+  \begin{multicols}{2}
+  \insertnote
+  \end{multicols}
+  \end{minipage}
+}
+
+\mode
+<all>

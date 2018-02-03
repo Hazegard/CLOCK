@@ -3,3 +3,4 @@ build/*
 svg-inkscape/
 *.pdf
 !src/*.pdf
+!*/img/*.pdf

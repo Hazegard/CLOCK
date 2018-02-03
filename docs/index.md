@@ -59,7 +59,8 @@
 ### Réseau
 
 - [Proxydroid](http://blog.dornea.nu/2014/12/02/howto-proxy-non-proxy-aware-android-applications-through-burp/)
-- [Proxudroid-BurpSuite](https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2012/july/network-analysis-with-proxydroid-burpsuite-and-hipster-dog/)
+- [Proxydroid-BurpSuite](https://www.nccgroup.trust/us/about-us/newsroom-and-events/blog/2012/july/network-analysis-with-proxydroid-burpsuite-and-hipster-dog/)
+- [Comment powned une application bancaire en 30 minutes](https://confs.imirhil.fr/20170629_pses_mitm/#1)
 
 ### Analyse Dynamique
 

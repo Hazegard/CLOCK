@@ -1,5 +1,13 @@
 # La rétroingénierie appliqué à Android: la traque aux traqueurs
 
+## Liens
+
+- [Dépôt Github](https://github.com/Hazegard/CLOCK)
+- [Présenation condensée](https://hazegard.github.io/CLOCK/Clock_handout.pdf)
+- [Présentation](https://hazegard.github.io/CLOCK/Clock.pdf)
+- [Présentation condensée avec notes](https://hazegard.github.io/CLOCK/Clock_handout_notes.pdf)
+- [Présentation avec notes](https://hazegard.github.io/CLOCK/Clock_notes.pdf)
+
 ## Installation de compilation
 
 - Installer latexmk, xelatex, texlive

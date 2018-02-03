@@ -21,9 +21,6 @@
 \setmonofont[
   Contextuals={Alternate}
 ]{FuraCode Nerd Font}
-%\usepackage[T1]{fontspec}
-%\usepackage[scaled]{berasans}
-%\usepackage[scale=1,sfdefault,light]{roboto}
 \setsansfont{Roboto Medium}
 \usepackage{pgfpages}
 
@@ -39,12 +36,10 @@
       framesep=3mm} 
       \renewcommand{\theFancyVerbLine}{\texttt{{{\arabic{FancyVerbLine}}}}}
 \usepackage{adjustbox}
-\usepackage{environ}% Required for \NewEnviron, i.e. to read the whole body of the environment
-%blue/red/pink/purple/yellow/orange/green/gray/bluegray/brown
+\usepackage{environ}%
 \usepackage{tikz}
 \usetikzlibrary{patterns}
 \usepackage[french]{babel}
-% This is the file main.tex
 \usepackage{beamerthemesideblue}
 
 
@@ -52,13 +47,12 @@
 \setbeamertemplate{note page}[custom]
 \setbeamercolor{note page}{bg=backgroundColor, fg=white}
 
-%\usecolortheme{red}
-\logo{\includegraphics[height=0.70cm]{logo.png}}
+\newcommand{\insertlicense}{\includegraphics[height=1cm]{img/by-sa.png}}
 \title[]{La rétroingénierie appliquée à Android}
 \subtitle{La traque aux traqueurs}
 \author{Maxime Catrice}
 \date{\today}
-\titlegraphic{\includegraphics[height=0.70cm]{logo.png}}
+\titlegraphic{\includegraphics[height=0.95cm]{logo.png}\bigbreak\insertlicense}
 
 \setbeamertemplate{title page}[default][colsep=-4bp,rounded=true,shadow=false]
 \setbeamercolor{background canvas}{bg=backgroundColor}
@@ -73,11 +67,3 @@
 \newcommand{\mono}[1]{
 \texttt{#1}
 }
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-

@@ -1,6 +1,5 @@
 \ProvidesPackageRCS $Header: /cvsroot/latex-beamer/latex-beamer/themes/theme/monTheme.sty,v 1.0 7/08/2016 0:04:14 G.FALLOURD-M.LEBRETON Exp $
 \mode<presentation>
-%\setbeamertemplate{title page}[default][colsep=-4bp,rounded=true]
 \definecolor{backgroundColor}{HTML}{2D2D2D}
 \definecolor{sectionColor}{HTML}{BBDEFB}%100
 \definecolor{subsectionColor}{HTML}{0D47A1}%900
@@ -55,11 +54,6 @@
 \setbeamercolor*{palette sidebar secondary}{fg=sectionTextColor}
 \setbeamercolor{section in toc}{fg=titleColor}
 \setbeamercolor{enumerate item}{ fg=normalTitleBlockColor}
-
-
-
-
-
 
 \usetikzlibrary{patterns}
 
@@ -161,7 +155,6 @@
 \fi%
 \begin{tikzpicture}[remember picture,overlay]
 \fill[color=leftFootlineColor](-3,0) rectangle (12,1.2);
-%\fill[pattern=custom north west lines,hatchspread=4pt,hatchthickness=1pt,hatchcolor=middleFootlineColor] (-3,0) rectangle (12,1.2);
 
 \fill[preaction={fill, leftFootlineColor},pattern=north west lines, pattern color=middleFootlineColor] (-3,0) rectangle (20,1.2);
 \end{tikzpicture}
@@ -217,7 +210,6 @@
 {
 \begin{tikzpicture}[remember picture,overlay]
 \fill[preaction={fill, middleFootlineColor},pattern=north west lines, pattern color=leftFootlineColor] (0,-20) rectangle (2.20,20);
-%\node at (0,2) {\includegraphics[scale=0.3]{logo.png}};
 \end{tikzpicture}
 
 \beamer@tempdim=\beamer@sidebarwidth%
@@ -236,7 +228,6 @@
 \vskip2pt%
 \fi%
 \begin{tikzpicture}
-%\node at (2,0) {\includegraphics[scale=0.07]{logo.png}};
 \end{tikzpicture}
 }%
 \setbeamersize{text margin left=0.5cm,text margin right=0.5cm}
@@ -264,33 +255,19 @@
 \vskip0pt%
 }
 
-% \defbeamertemplate{description item}{align left}{\insertdescriptionitem\hfill}
-
 \defbeamertemplate*{note page}{custom}
 {%
-  %{%
-    %\scriptsize
-    %\usebeamerfont{note title}\usebeamercolor[fg]{note title}%
-    %\ifbeamercolorempty[bg]{note title}{}{%
-      %\insertvrule{0\paperheight}{note title.bg}%
       \vskip0\paperheight%
-      %\nointerlineskip%
-    %}%
-  %}%
   \ifbeamercolorempty[bg]{note page}{}{%
-    %\nointerlineskip%
     \insertvrule{\paperheight}{note page.bg}%
     \vskip-0.95\paperheight%
   }%
-  % \hskip-0.5\paperwidth%
   \begin{minipage}[t][0cm]{\linewidth}
-  %\vskip.25em
   \nointerlineskip
   \begin{multicols}{2}
   \insertnote
   \end{multicols}
   \end{minipage}
 }
-
 \mode
 <all>

@@ -57,7 +57,9 @@
 - [Rencontre avec Exodus Privacy, qui révèle les trackers des applications Android](https://www.nextinpact.com/news/105655-rencontre-avec-exodus-privacy-qui-revele-trackers-applications-android.htm)
 - [Lutter contre les mouchards des apps, une cause citoyenne : voici l’histoire d’Exodus Privacy](https://www.numerama.com/politique/313309-lutter-contre-les-mouchards-des-apps-une-cause-citoyenne-voici-lhistoire-dexodus-privacy.html)
 - [Android Users: To Avoid Malware, Try the F-Droid App Store](https://www.wired.com/story/android-users-to-avoid-malware-ditch-googles-app-store/)
-
+- [Yale Privacy lab](https://privacylab.yale.edu/)
+- [Exodus privacy](https://exodus-privacy.eu.org/)
+- [Kimetrak](https://www.nextinpact.com/news/105881-kimetrak-quels-sites-multiplient-services-pistage.htm)
 ### Réseau
 
 - [Proxydroid](http://blog.dornea.nu/2014/12/02/howto-proxy-non-proxy-aware-android-applications-through-burp/)

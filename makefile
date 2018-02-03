@@ -15,7 +15,7 @@ CN="\documentclass[aspectratio=1610, twocolumn]{beamer}\input{header}\setbeamero
 CHN="\documentclass[aspectratio=1610, twocolumn, handout]{beamer}\input{header}\setbeameroption{show notes on second screen=left}\\\\begin{document}\input{$(INPUT)}\\\\end{document}"
 
 BUILD_DIR=build/
-OUTPUTDIR=src/
+OUTPUTDIR=docs/
 
 MK=$(LATEXMK) $(XELATEX) $(LATEXMKOPT) $(LATEXMKOUTPUT)
 

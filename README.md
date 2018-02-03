@@ -4,7 +4,6 @@
 
 ## Liens
 
-- [Dépôt Github](https://github.com/Hazegard/CLOCK)
 - [Présenation condensée](https://hazegard.github.io/CLOCK/Clock_handout.pdf)
 - [Présentation](https://hazegard.github.io/CLOCK/Clock.pdf)
 - [Présentation condensée avec notes](https://hazegard.github.io/CLOCK/Clock_handout_notes.pdf)

@@ -8,7 +8,7 @@
 - [Présentation condensée avec notes](https://hazegard.github.io/CLOCK/Clock_handout_notes.pdf)
 - [Présentation avec notes](https://hazegard.github.io/CLOCK/Clock_notes.pdf)
 
-## Installation de compilation
+## Installation et compilation
 
 - Installer latexmk, xelatex, texlive
 - make clock/clock_handout/clock_notes/clock_handout_notes

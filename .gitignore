@@ -1,3 +1,4 @@
+*.pdfpc
 build/*
 */build/*
 svg-inkscape/

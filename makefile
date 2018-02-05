@@ -19,6 +19,8 @@ OUTPUTDIR=docs/
 
 MK=$(LATEXMK) $(XELATEX) $(LATEXMKOPT) $(LATEXMKOUTPUT)
 
+PDF=$(CLOCK_NOTES)
+
 all: $(CLOCK) $(CLOCK_HANDOUT) $(CLOCK_NOTES) $(CLOCK_HANDOUT_NOTES)
 
 $(CLOCK):
@@ -47,3 +49,11 @@ $(CLOCK_HANDOUT_NOTES):
 
 clean:
 	rm -rf $(BUILD_DIR)*
+
+PREPARE_CACHE:
+	pdfpc -n right --persist-cache $(OUTPUTDIR)$(PDF).pdf
+
+CACHED_PRESENTATION:
+	pdfpc -n right --persist-cache $(OUTPUTDIR)$(PDF).pdf
+
+.PHONY: clean all PREPARE_CACHE CACHED_PRESENTATION

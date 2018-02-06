@@ -1,56 +1,56 @@
 %<*Composition>
-\textbf{\uline{AndroidManifest}}\\
+\textbf{\uline{Composition:}}
+\smallbreak
+\uline{AndroidManifest}\\
 \textbullet~~Fichier xml qui contient:\\
 \textbullet~~Permissions\\
 \textbullet~~Liste des activités\\
 \textbullet~~Services
 \smallbreak
-\textbf{\uline{Assets}}\\
+\uline{Assets}\\
 Autres resources (polices...)
 \smallbreak
-\textbf{\uline{Classes.dex}}\\
-Code binaire de l'application, limité à 65 000 méthodespar fichier,
-mais il faut éviter de le dépasser, parce que le support au-delas n'est pas assuré
+\uline{Classes.dex}\\
+Code binaire de l'application, limité à 65 000 méthodes par fichier
 \smallbreak
-
-\textbf{\uline{META-INF}}
+\uline{META-INF}
 \smallbreak
 Informations autour de l'application:\\
 \textbullet~~La classe à lancer\\
-\textbullet~~ Version du package\\
-\textbullet~~ Numéro de version\\
-\textbf{\uline{res}}\\
+\textbullet~~Version du package\\
+\textbullet~~Numéro de version\\
+\uline{res}\\
 Ressources non compilées, mais standares\\
 ex: Layout, Drawables, 
 \smallbreak
-\textbf{\uline{resources.arsc}}\\
+\uline{resources.arsc}\\
 Resources compilées, en format binaires xml
 %</Composition>
 
 %<*Compilation>
-Le code java est compilé en byte-code Java, puis rassemblé,
-compacté et optimisé via le programme dx en un executable dalvik,
-byte-code spécifique, prêt à être exploité par la machine
-virtuelle dalvik ou ART.
+\textbf{\uline{Compilation:}}\smallbreak
+\textbullet~~Dode java est compilé en byte-code Java
+\textbullet~~Rassemblé, compacté et optimisé via le programme dx en un executable dalvik,
+byte-code spécifique, prêt à être exploité par la machine virtuelle dalvik ou ART.
 \bigbreak
-Ce fichier n'est pas compressé, ce qui permet à la machine virtuelle de mapper
+Fichier non compressé: la machine virtuelle peut mapper rapidement
 le code en mémoire et de le partager très facilement\\
 %</Compilation>
 
 %<*ARTVSDalvik>
 \textbf{\uline{JIT:}}\\
 \textbullet~~ Just In time:\\
-L'application est compilé en langage machine uniquement au moment 
-ou le code est nécessaire
-Occupe moins d'expace mémoire\\
-Plus lents\\
-Disponible pour les versions inférieurs à Kitkat\\
+L'application est compilé en langage machine uniquement au moment~
+où le code est nécessaire\\
+\textbullet~~Occupe moins d'expace mémoire\\
+\textbullet~~Plus lent\\
+\textbullet~~Disponible pour les versions inférieurs à Kitkat\\
 \textbf{\uline{AOT:}}\\
 \textbullet~~ Ahead of time:\\
-L'application est compilé en langage machine au moment de son installation
-Bien plus rapide\\
-Occupe plus d'expace mémoire\\
-Disponible pour les versions supérieures à Kitkat
+L'application est compilé en langage machine au moment de son installation\\
+\textbullet~~Bien plus rapide\\
+\textbullet~~Occupe plus d'expace mémoire\\
+\textbullet~~Disponible pour les versions supérieures à Kitkat
 \\
 A partir de nougat, ART a été modifié pour utiliser à la fois un comportement JIT et AOT, 
 permettant d'allier le meilleur des deux méthodes

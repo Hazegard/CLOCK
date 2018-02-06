@@ -1,23 +1,32 @@
 %<*Limites>
+\bigbreak
 \textbf{\uline{Limites:}}
-\\\textbullet~~Les opérations de déboguage et la réalisation de traces ne pourront plus être proposées sur la version commerciale de l'application. Privant alors le support d'outils importants pour l'aide aux utilisateurs.
-\\\textbullet~~La sécurité par l'opacité est un mythe ! L'obfuscation protège le code source contre la piraterie intellectuelle durant un temps assez court. Mais elle ne protège pas des pirates voulant exploiter les failles de sécurité de l'application.
-\\\textbullet~~L'augmentation de la complexité algorithmique et la modification des structures de données augmentent le temps d'exécution. Les patrons de conceptions choisis par le développeur disparaissent et peuvent être remplacés par d'autres moins efficaces.
+\\\textbullet~~Débogage et récupération de log plus difficile.~
+Privant alors le support d'outils importants pour l'aide aux utilisateurs.
+\\\textbullet~~L'obfuscation protège le code source contre la piraterie intellectuelle durant un temps assez court.
+~Mais elle ne protège pas des pirates voulant exploiter les failles de sécurité de l'application.
+\\\textbullet~~L'augmentation de la complexité algorithmique et la modification des structures de données augmentent le temps d'exécution.
 \\\textbullet~~La qualité (algorithmique) du code source baisse considérablement et peut être un frein à la certification par des organismes tiers.
-\\\textbullet~~L'appel à des API externes (notamment en Java) fait par le nom ne peut PAS être obfusqué, et donnent alors des indices aux pirates.
+\\\textbullet~~L'appel à des API externes fait par le nom ne peut pas être obfusqué.
 %</Limites>
 
 %<*Obfuscation>
+\bigbreak
 \textbf{\uline{Obfuscation de code:}}
 \\\textbullet~~Instructions inutiles/Arguments inutiles: ALourdi le programme
 \\\textbullet~~Minification: pratique répandue, permettant de réduire la taille du code en renommant 
- les variables et classes par les lettres, ralentie la lecture du code à la décompilation
+ les variables et classes par une lettre, ralentie la lecture du code à la décompilation
 \\\textbullet~~Ralentie l'application, car ces opérations sont lourdes\\
 
 \textbf{\uline{Chiffrement du programme:}}
 \\\textbullet~~Ralenti le lancement du programme, le programme doit forcément être déchiffré pour être exécuté,
  on peut alors essayer de l'analyser\\
 
-\textbf{\uline{Execution du code distant:}}\\\textbullet~~Les applications web, nécessite une connexion internet
+\textbf{\uline{Execution du code distant:}}
+\\\textbullet~~Les applications web, nécessite une connexion internet
 %</Obfuscation>
 
+%<*Kerckhoffs>
+\textbf{\uline{Principe de Kerckhoffs:}}
+\\Un système est considéré commeétant sécurisé de par sa conceptionet non parce que sa conception estinconnue de l’adversaire
+%</Kerckhoffs>

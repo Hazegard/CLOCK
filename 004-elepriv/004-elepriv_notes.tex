@@ -1,29 +1,39 @@
 %<*Elepriv>
-L'élévation de privilège résulte de l'octroi à un intrus d'autorisations 
-supérieures à celles initialement accordées.Par exemple, un intrus avec 
-un jeu de privilèges contenant des autorisations « en lecture seule »
-élèvent d'une façon ou d'une autre le jeu pour inclure des autorisations
-« en lecture et en écriture ».
+\textbf{\uline{Elévation de privilège:}}\\
+Octroyer à un indivudu des autorisations supérieures à celles initialement accordées.\\
+Par exemple, passer de droits ``en lecture seule'' à des droits ``en lecture et en écriture''
+d'une façon ou d'une autre.
 %</Elepriv>
 
+%<*Interet>
+\bigbreak
+\textbf{\uline{Intérêts:}}\\
+\textbullet~~Android restreints les droits utilisateurs (on ne peut pas désinstaller certaines application)\\
+\textbullet~~On va chercher à utiliser davantage de possibilités qui ne sont pas accessible spar défaut\\
+\textbullet~~Un des intéres peut par exemple être la moification en profondeur le fonctionnement des applications
+%</Interet>
+
 %<*Root>
+\bigbreak
 \textbf{\uline{Root:}}\\
 Utilisation de privilèges avances, permettant de limiter des limitations 
 imposées par le système\\
 Par exemple, cela permet de supprimer les applications systèmes,
-qui ne sont pas désinstallables en tant que simple utilisateur.\\
+qui ne sont pas désinstallables en tant que simple utilisateur.
 %</Root>
 
 %<*RootPrincipe>
+\bigbreak
 \textbf{\uline{Principe du root:}}\\
-Utilisation du'une faille d'android, ou alors du mode récupération d'android pour
-obtenir temporairement un uid à , c'est à dire root\\
-Remontage de la partition système en écriture, afin de pouvoir la modifier\\
-Copie de nouveaux binaires, tels que su, busybox\\
-Remontage de la partition système en lecture seuls
+\textbullet~~Utilisation d'une faille d'android, ou alors du mode récupération d'android pour~
+obtenir temporairement un uid à 0, c'est à dire root\\
+\textbullet~~Remontage de la partition système en écriture, afin de pouvoir la modifier\\
+\textbullet~~Copie de nouveaux binaires, tels que su, busybox\\
+\textbullet~~Remontage de la partition système en lecture seuls
 %</RootPrincipe>
 
 %<*RootExemples>
+\bigbreak
 \textbf{\uline{Exemples d'utilisation:}}\\
 \textbullet~~Accéder aux partitions systèmes\\
 \textbullet~~Installation de busybox\\
@@ -31,11 +41,12 @@ Remontage de la partition système en lecture seuls
 au moment de la sauvegarde\\
 \textbullet~~Modifier des propriétés systèmes (densité d'écran, adresse mac...)\\
 %</RootExemples>
+
 %<*Xposed>
 \textbf{\uline{Xposed:}}\\
-Framework permettant d’intercepter toutes méthodes d’une application, pour injecter
+\textbullet~~Framework permettant d’intercepter toutes méthodes d’une application, pour injecter
 du code suplémentaireExemple d’utilisation\\
-Ne fonctionne qu'avec les applications java, mais pas avec les bibrairies natives, par exemple\\
+\textbullet~~Ne fonctionne qu'avec les applications java, pas avec les bibrairies natives, par exemple\\
 %</Xposed>
 
 %<*XposedUtilisation>
@@ -51,19 +62,21 @@ Ne fonctionne qu'avec les applications java, mais pas avec les bibrairies native
 \textbullet~~On s'intéresse au processus une fois le lancement du kernel\\
 \textbullet~~Le kernel initialise le processus Init\\
 \textbullet~~Init lance à son tour des démons (usb, adb, ril), et le runtime\\
-\textbullet~~Init lance aussi Zygote\\
+\textbullet~~Init lance aussi Zygote
 %</BootAndroid>
 
 %<*Zygote>
+\bigbreak
 \textbf{\uline{Zygote:}}\\
 Zygote est un processus primordiale pour Android:\\
 \textbullet~~Il initialise la machine virtuelle\\
-\textbullet~~pré-charges des classes communes aux applications\\
+\textbullet~~Pré-charges des classes communes aux applications\\
 \textbullet~~Se fork pour chaque nouvelle application lancée\\
 \textbullet~~Partage une partie de sa mémoire avec les applications forkées\\
 %</Zygote>
 
 %<*XposedFonctionnement>
+\bigbreak
 \textbf{\uline{Fonctionnement de Xposed:}}\\
 \textbullet~~Le processus init est modifié pour changer le comportement de Zygote en ajoutant
 des librairies au classpath\\

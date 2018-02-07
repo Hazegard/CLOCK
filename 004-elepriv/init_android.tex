@@ -7,7 +7,11 @@
 \begin{document}
 \begin{tikzpicture}[scale=0.45, every node/.style={scale=0.6},show background rectangle,
     background rectangle/.style={fill=backgroundColor},color=white,]
-    \tikzstyle{myarrows}=[thick, line width=1.7mm,-open triangle 90,
+    \tikzstyle{myarrows}=[thick, line width=1.3mm,-open triangle 90,
+    postaction={draw, line width=2.5mm, shorten >=3mm, -},
+    postaction={draw, backgroundColor, shorten >= 0.4mm, -triangle 90, line width=1.05mm},
+    postaction={draw, line width=2mm, backgroundColor, shorten >= 4mm, -}]
+    \tikzstyle{myarrows_back}=[thick, line width=1.7mm,-open triangle 90,
     postaction={draw, line width=6.5mm, shorten >=4mm, -},
     postaction={draw, backgroundColor, shorten >= 1.3mm, -triangle 90, line width=1mm},
     postaction={draw, line width=5mm, backgroundColor, shorten >= 4mm, -}]
@@ -15,14 +19,14 @@
 \draw [ultra thick, rounded corners=5] (0,0) rectangle node{
 Kernel
 } (3,-1.5);
-\node[inner sep=0,minimum size=0] at (1.5,-1.5) (K) {}; % invisible node
+\node[inner sep=0,minimum size=0] at (1.5,-1.55) (K) {}; % invisible node
 \draw [ultra thick, rounded corners=5] (0,-3.5) rectangle node{
 Init
 } (3,-5);
 \node[inner sep=0,minimum size=0] at (1.5,-3.5) (I0) {}; % invisible node
-\node[inner sep=0,minimum size=0] at (0,-4.25) (I1) {}; % invisible node
-\node[inner sep=0,minimum size=0] at (3,-4.25) (I2) {}; % invisible node
-\node[inner sep=0,minimum size=0] at (1.5,-5) (II) {}; % invisible node
+\node[inner sep=0,minimum size=0] at (-0.05,-4.25) (I1) {}; % invisible node
+\node[inner sep=0,minimum size=0] at (3.05,-4.25) (I2) {}; % invisible node
+\node[inner sep=0,minimum size=0] at (1.5,-5.05) (II) {}; % invisible node
 
 \draw [ultra thick, rounded corners=5] (0,-3.5) rectangle node{
 Init
@@ -31,7 +35,7 @@ Init
 \draw[myarrows] (K) to (I0);
 
 \node[inner sep=0,minimum size=0] at (1.5,-3.5) (Z0) {}; % invisible node
-\node[inner sep=0,minimum size=0] at (1.5,-8.5) (Z1) {}; % invisible node
+\node[inner sep=0,minimum size=0] at (1.5,-8.55) (Z1) {}; % invisible node
 \onslide<1-5|handout:1>{\draw [ultra thick, rounded corners=5] (0,-7) rectangle node{
 Zygote
 } (3,-8.5);}

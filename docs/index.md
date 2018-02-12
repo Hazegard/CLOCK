@@ -60,6 +60,12 @@
 - [Yale Privacy lab](https://privacylab.yale.edu/)
 - [Exodus privacy](https://exodus-privacy.eu.org/)
 - [Kimetrak](https://www.nextinpact.com/news/105881-kimetrak-quels-sites-multiplient-services-pistage.htm)
+
+### Analyse Statique
+
+- [jadx](https://github.com/skylot/jadx)
+- [Exodus Standalone](https://github.com/Exodus-Privacy/exodus-standalone)
+- [StaCoAn](https://github.com/vincentcox/StaCoAn)
 ### Réseau
 
 - [Proxydroid](http://blog.dornea.nu/2014/12/02/howto-proxy-non-proxy-aware-android-applications-through-burp/)

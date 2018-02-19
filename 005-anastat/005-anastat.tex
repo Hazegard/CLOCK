@@ -1,6 +1,6 @@
 \documentclass[aspectratio=1610,]{beamer}%, handout
 \input{header.tex}
-\setbeameroption{show notes on second screen=top}
+%\setbeameroption{show notes on second screen=top}
 \begin{document}
  
 \section{L'analyse statique}
@@ -16,15 +16,25 @@
     comportement sans l'éxecuter.
   }
   \end{block}
-  \vspace{-0.5cm}
   \begin{columns}[t]
-    \begin{column}{0.48\textwidth}
-      \begin{block}{Méthode d'analyse}<4->
+    \begin{column}{0.7\textwidth}
+      \only<4-10|handout:1>{
+        \begin{block}{Objectifs:}<4->
+          \begin{itemize}
+            \item<5-> Permissions de l'application
+            \item<6-> Trackers inclus
+            \item<7-> Portions de codes utilisables pour l'analyse dynamique
+            \end{itemize}
+          \end{block}
+        \begin{block}{Méthode d'analyse}<8->
         \begin{itemize}
-        \item<5-> Analyse du code source
-        \item<6-> Analyse par signature
+        \item<9-> Analyse du code source
+        \item<10-> Analyse par signature
         \end{itemize}
         \end{block}
+
+      }
+      \only<11-|handout:2>{
       \begin{block} {Outils:}<11->
       \begin{itemize}
       \item<12-> jadx
@@ -33,15 +43,12 @@
       \item<15-> StaCoAn
       \end{itemize}
       \end{block}
+      }
     \end{column}
-  \begin{column}{0.48\textwidth}
-      \begin{block}{Objectifs:}<7->
-      \begin{itemize}
-        \item<8-> Permissions de l'application
-        \item<9-> Trackers inclus
-        \item<10-> Portions de codes utilisables pour l'analyse dynamique
-        \end{itemize}
-      \end{block}
+  \begin{column}{0.25\textwidth}
+    \vfill
+      \includegraphics[width=\linewidth]{img/sleeping_bugdroid.png}
+      \vfill
     \end{column}
   \end{columns}
   \end{frame}

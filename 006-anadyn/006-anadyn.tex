@@ -1,4 +1,4 @@
-\documentclass[aspectratio=1610, ]{beamer}%, handout
+\documentclass[aspectratio=1610, handout]{beamer}%, handout
 \input{header.tex}
 \usepackage{xmpmulti}
  \setbeameroption{show notes on second screen=top}
@@ -6,36 +6,51 @@
  % Smali: langage lisible par l'humain des fichiers dex
 
  \section{L'analyse dynamique}
-\begin{frame}
+\begin{frame}[t]
   \slidetitle[]
   \note{\onslide+<1->{\ExecuteMetaData[006-anadyn_notes.tex]{Interet}}}
   \note{\onslide+<7->{\ExecuteMetaData[006-anadyn_notes.tex]{Environnement}}}
   \note{\onslide+<12->{\ExecuteMetaData[006-anadyn_notes.tex]{Utilisation}}}
+  \begin{block}{Qu'est ce que l'analyse dynamique?}<2->
+  \onslide<3->{
+    Analyse d'un programme en l'éxécutant, dans un environnement dédié permettant d'observer son comportement et son fonctionnement en situation réelle 
+  }
+  \end{block}
   \begin{columns}
-    \begin{column}{0.48\linewidth}
-      \begin{block}{Intérêt:}<2->
+    \begin{column}{0.7\linewidth}
+      \begin{overlayarea}{\linewidth}{0.5\textheight}
+      \only<1-7|handout:1>{
+      \begin{block}{Intérêt:}<4->
         \begin{itemize}
-        \item<3-> Obtenir des informations générées dynamiquement par l'application
-        \item<4-> Difficulté de déchiffre des strings lourdement obfusqués
-        \item<5-> Requêtes qui ne peuvent pas être interprétées par un MITM
+        \item<5-> Obtenir des informations générées dynamiquement par l'application
+        \item<6-> Difficulté de déchiffre des strings lourdement obfusqués
+        \item<7-> Requêtes qui ne peuvent pas être interprétées par un MITM
         \end{itemize}
       \end{block}
-    \end{column}
-    \begin{column}{0.48\linewidth}
-      \begin{block}{Outils:}<6->
+      }
+      \only<8-15|handout:2>{
+        \vspace{-0.45cm}
+      \begin{block}{Outils:}<8->
         \begin{itemize}
-        \item<7-> \uline{Émulateur:} Genymotion
-        \item<8-> Root, Xposed
-        \item<9-> Inspeckage
-        \item<10-> Android Device Monitor
+        \item<9-> \uline{Émulateur:} Genymotion
+        \item<10-> Root, Xposed
+        \item<11-> Inspeckage
+        \item<12-> Android Device Monitor
         \end{itemize}
       \end{block}
-      \begin{block}{Utilisation:}<11->
+      \begin{block}{Exemples d'utilisation:}<13->
         \begin{itemize}
-        \item<12-> Utilisation d'un débugger
-        \item<13-> Analyse de la mémoire utilisée par l'application
+        \item<14-> Utilisation d'un débugger
+        \item<15-> Analyse de la mémoire utilisée par l'application
       \end{itemize}
       \end{block}
+      }
+    \end{overlayarea}
+    \end{column}
+    \begin{column}{0.25\linewidth}
+      \vfill
+      \includegraphics[width=\linewidth]{img/running_bugdroid.png}
+      \vfill
     \end{column}
   \end{columns}
 \end{frame}

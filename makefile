@@ -53,7 +53,7 @@ clean:
 PREPARE_CACHE:
 	pdfpc -n right --persist-cache $(OUTPUTDIR)$(PDF).pdf
 
-CACHED_PRESENTATION:
-	pdfpc -n right --persist-cache $(OUTPUTDIR)$(PDF).pdf
+PRESENTATION_AND_COFEE:
+	pdfpc -n right -d 20 --persist-cache $(OUTPUTDIR)$(PDF).pdf
 
 .PHONY: clean all PREPARE_CACHE CACHED_PRESENTATION

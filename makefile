@@ -57,5 +57,5 @@ PRESENTATION_AND_COFEE:
 	pdfpc -n right -d 20 --persist-cache $(OUTPUTDIR)$(PDF).pdf
 
 PRESENTATION_CONDENSED:
-	pdfpc -n right $(CLOCK_HANDOUT_NOTES).pdf
+	pdfpc -n right $(OUTPUTDIR)$(CLOCK_HANDOUT_NOTES).pdf
 .PHONY: clean all PREPARE_CACHE CACHED_PRESENTATION

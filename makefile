@@ -9,10 +9,10 @@ CLOCK_HANDOUT=Clock_handout
 CLOCK_HANDOUT_NOTES=Clock_handout_notes
 
 INPUT=000-Clock
-C="\documentclass[aspectratio=1610, twocolumn]{beamer}\input{header}\\\\begin{document}\input{$(INPUT)}\\\\end{document}"
-CH="\documentclass[aspectratio=1610, twocolumn, handout]{beamer}\input{header}\\\\begin{document}\input{$(INPUT)}\\\\end{document}"
-CN="\documentclass[aspectratio=1610, twocolumn]{beamer}\input{header}\setbeameroption{show notes on second screen=right}\\\\begin{document}\input{$(INPUT)}\\\\end{document}"
-CHN="\documentclass[aspectratio=1610, twocolumn, handout]{beamer}\input{header}\setbeameroption{show notes on second screen=right}\\\\begin{document}\input{$(INPUT)}\\\\end{document}"
+C="\documentclass[aspectratio=1610, twocolumn]{beamer}\input{header}\\begin{document}\input{$(INPUT)}\\end{document}"
+CH="\documentclass[aspectratio=1610, twocolumn, handout]{beamer}\input{header}\\begin{document}\input{$(INPUT)}\\end{document}"
+CN="\documentclass[aspectratio=1610, twocolumn]{beamer}\input{header}\setbeameroption{show notes on second screen=right}\\begin{document}\input{$(INPUT)}\\end{document}"
+CHN="\documentclass[aspectratio=1610, twocolumn, handout]{beamer}\input{header}\setbeameroption{show notes on second screen=right}\\begin{document}\input{$(INPUT)}\\end{document}"
 
 BUILD_DIR=build/
 OUTPUTDIR=docs/

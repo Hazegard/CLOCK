@@ -178,14 +178,22 @@
 \vbox{%
 
 \vskip1ex%
-\beamer@sidebarformat{2pt}{section in sidebar}{\textbf{\textbullet~{\insertsectionhead}}}%
+\pgfsetfillopacity{0}
+\begin{beamercolorbox}[wd=\beamer@sidebarwidth,leftskip=2pt,rightskip=1ex plus1fil]{section in sidebar}
+\pgfsetfillopacity{1}
+\textbf{\textbullet~\insertsectionhead}\par%
+\end{beamercolorbox}
 }%
 }
 \defbeamertemplate*{section in sidebar shaded}{sidebar theme}%SHADED
 {%
 \vbox{%
 \vskip1ex%
-\beamer@sidebarformat{2pt}{section in sidebar}{\fontseries{t}\selectfont{\textbullet~\insertsectionhead}}%SHADED
+\pgfsetfillopacity{0}
+\begin{beamercolorbox}[wd=\beamer@sidebarwidth,leftskip=2pt,rightskip=1ex plus1fil]{transparent}
+\pgfsetfillopacity{1}
+\textbullet~\insertsectionhead\par%
+\end{beamercolorbox}
 }%
 }
 \defbeamertemplate*{subsection in sidebar}{sidebar theme}
